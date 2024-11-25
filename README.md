@@ -11,9 +11,7 @@
 
 Main repository for `yaml-ML` Python package.
 
-___
-
-## QUICKSTART...
+# ⏩ Quickstart
 
 ## 1. Installation
 
@@ -27,6 +25,6 @@ TODO
 
 TODO
 
-___
+# 📖 More details
 
-### MORE DETAILS...
+TODO
