@@ -11,13 +11,15 @@
 
 _This is the official main repository for `yaml-ML` Python package._
 
+A LITTLE DESCRIPTION OF THE PURPOSE.
+
 # ⏩ Quickstart
 
-## 1. Installation
+## 1. How to install it?
 
 TODO
 
-## 2. Usage
+## 2. How to use it?
 
 TODO
 
@@ -25,6 +27,6 @@ TODO
 
 TODO
 
-# 📖 An example step-by-step...
+# 📖 Usage Example: Step-by-Step
 
 TODO
