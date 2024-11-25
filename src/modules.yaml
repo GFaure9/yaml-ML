@@ -1,0 +1,61 @@
+loading:
+  format:
+    - csv
+    - txt
+  separator: None
+
+preprocessing:
+  cont:
+    cleaning:
+      - remove_nans
+      - remove_outliers
+    replace_nans:
+      - median
+      - mean
+      - most_frequent
+      - value
+    scaling:
+      - min_max
+      - abs_max
+      - standard
+      - robust
+  cat:
+    cleaning:
+      - remove_nans
+    replace_nans:
+      - most_frequent
+      - value
+    encoding:
+      - binary
+      - one_hot
+      - ordinal
+
+dataset:
+  split:
+    stratify: None
+    train: None
+    test: None
+    val: None
+
+models:
+  regression:
+    - linear
+    - ridge
+    - lasso
+    - logistic
+    - mlp
+    - svr
+    - decision_tree
+    - random_forest
+    - gradient_boosting
+    - ada_boost
+    - knn
+  classification:
+    - logistic
+    - decision_tree
+    - svc
+    - random_forest
+    - gradient_boosting
+    - ada_boost
+    - knn
+    - mlp
