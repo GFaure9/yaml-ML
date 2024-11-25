@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo/logo2.png" width="100" />
+  <img src="./logo/logo2_colored.png" width="400" />
 </p>
 <p align="center">
   <img src="./logo/logo_drawing.png" width="400" />
