@@ -9,7 +9,7 @@
 </p>
 
 
-    This is the official main repository for `yaml-ML` Python package. 
+_This is the official main repository for `yaml-ML` Python package._
 
 # ⏩ Quickstart
 
