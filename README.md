@@ -25,6 +25,6 @@ TODO
 
 TODO
 
-# 📖 More details
+# 📖 An example step-by-step...
 
 TODO
