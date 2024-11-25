@@ -16,6 +16,6 @@ TODO
 
 TODO
 
-## 3. Documentation
+## 3. Docs
 
 TODO
