@@ -16,7 +16,7 @@ _This is the official main repository for `yaml-ML` Python package._
 ___
 
 <p align="left">
-  <img src="./logo/logo_with_desc.png" width="400" />
+  <img src="./logo/logo_with_desc.png" width="600" />
 </p>
 
 ___
