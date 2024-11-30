@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="./logo/logo2_colored.png" width="400" />
-</p>
+[//]: # (<p align="center">)
+
+[//]: # (  <img src="./logo/logo2_colored.png" width="400" />)
+
+[//]: # (</p>)
 <p align="center">
   <img src="./logo/logo_drawing.png" width="400" />
 </p>
@@ -11,15 +13,21 @@
 
 _This is the official main repository for `yaml-ML` Python package._
 
-A LITTLE DESCRIPTION OF THE PURPOSE.
+___
+
+<p align="left">
+  <img src="./logo/logo_with_desc.png" width="400" />
+</p>
+
+___
 
 # ⏩ Quickstart
 
-## 1. How to install it?
+## 1. Installation
 
 TODO
 
-## 2. How to use it?
+## 2. Usage
 
 TODO
 

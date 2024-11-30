@@ -2,7 +2,7 @@ logs: no
 
 loading:
   folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/examples"
-  name: "example0_data"
+  name: "insurance_charges"
   format: 'csv'
   separator: ','
 
@@ -51,13 +51,13 @@ model:
 #    lasso:
 #      alpha: 0.1
 #      fit_intercept: yes
-#    mlp:
-#      hidden_layer_sizes: [50, 50]
-#      activation: 'relu'
-#      solver: 'adam'
-#      max_iter: 1000
-#      random_state: 42
-    svr:
-      kernel: 'rbf'
-      C: 10
-      epsilon: 0.1
+    mlp:
+      hidden_layer_sizes: [50, 50]
+      activation: 'relu'
+      solver: 'adam'
+      max_iter: 1000
+      random_state: 42
+#    svr:
+#      kernel: 'rbf'
+#      C: 10
+#      epsilon: 0.1

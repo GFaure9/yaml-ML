@@ -2,7 +2,7 @@ from typing import Dict
 from src import modules
 from src.logger_cfg import logger, with_spinner
 import numpy as np
-from .regression import REGRESSOR
+from .regression import REGRESSOR, RegModel
 from .classification import CLASSIFIER
 
 
@@ -46,34 +46,31 @@ class PredictorConfig:
         return txt
 
 
-class SklearnPredictorAPI:
-    def fit(self, **kwargs):
-        pass
-
-    def predict(self, **kwargs):
-        pass
-
-
 class Predictor:
     models_dicts = {
         "regression": REGRESSOR,
         "classification": CLASSIFIER,
     }
-    def __init__(self, cfg: PredictorConfig, model: SklearnPredictorAPI = None):
+    def __init__(self, cfg: PredictorConfig, model: RegModel = None):
         self.cfg = cfg
         self.model = model
+        self.predictor = None
 
     def initialize(self):
         d, c = self.models_dicts, self.cfg
-        self.model = d[c.prediction_type][c.model_name](**c.h_params)
+        self.model: RegModel = d[c.prediction_type][c.model_name]
+        if self.model.fmt == "sklearn":
+            self.predictor = self.model.mdl(**c.h_params)
         logger.info(f"Initialized '{c.model_name}' {c.prediction_type} model with hyperparameters: {c.h_params}")
 
     @with_spinner(style="moon")
     def train(self, X: np.ndarray, y: np.ndarray):
-        self.model.fit(X, y)
+        if self.model.fmt == "sklearn":
+            self.predictor.fit(X, y)
 
     def infer(self, x):
-        return self.model.predict(x)
+        if self.model.fmt == "sklearn":
+            return self.predictor.predict(x)
 
 
 # todo: add method to save the model
