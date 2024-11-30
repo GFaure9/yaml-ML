@@ -11,7 +11,7 @@
 </p>
 
 
-_This is the official main repository for `yaml-ML` Python package._
+[//]: # (_This is the official main repository for `yaml-ML` Python package._)
 
 ___
 
