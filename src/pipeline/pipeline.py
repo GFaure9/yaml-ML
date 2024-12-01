@@ -122,5 +122,6 @@ class Pipeline:
 
 
 if __name__ == "__main__":
-    pipeline = Pipeline(cfg_pth="../../examples/example0_cfg.yaml")
+    # pipeline = Pipeline(cfg_pth="../../examples/example_regression_cfg.yaml")
+    pipeline = Pipeline(cfg_pth="../../examples/example_classification_cfg.yaml")
     pipeline.run()

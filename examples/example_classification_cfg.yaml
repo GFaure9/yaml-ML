@@ -1,0 +1,51 @@
+logs: no
+
+loading:
+  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/examples"
+  name: "iris"
+  format: 'csv'
+  separator: ','
+
+target_var: 'Species'
+
+preprocessing:
+  Id:
+    remove: yes  # todo: implement
+  Species:
+    type: "cat"
+    cleaning: 'remove_nans'
+  SepalLengthCm:
+    type: "cont"
+    cleaning: ['remove_nans', 'remove_outliers' ]
+    replace_nans: 'median'
+    scaling: 'robust'
+  SepalWidthCm:
+    type: "cont"
+    cleaning: ['remove_nans', 'remove_outliers' ]
+    replace_nans: 'median'
+    scaling: 'robust'
+  PetalLengthCm:
+    type: "cont"
+    cleaning: ['remove_nans', 'remove_outliers' ]
+    replace_nans: 'median'
+    scaling: 'robust'
+  PetalWidthCm:
+    type: "cont"
+    cleaning: ['remove_nans', 'remove_outliers' ]
+    replace_nans: 'median'
+    scaling: 'robust'
+
+dataset:
+  split:
+    stratified: no
+    train: 80
+    test: 20
+    val: 10
+
+model:
+  classification:
+    random_forest:
+      n_estimators: 100
+      criterion: 'gini'
+      min_samples_split: 2
+      min_samples_leaf: 1

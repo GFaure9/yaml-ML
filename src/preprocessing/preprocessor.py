@@ -113,3 +113,6 @@ class PreProcessor:
             new_dataset.arrays_names = tuple(list(names[: idx]) + new_name + list(names[idx + 1:]))
 
         return new_dataset
+
+
+# todo: add possibility to drop whole columns (given variable names)

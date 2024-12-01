@@ -1,9 +1,9 @@
-from typing import Dict
+from typing import Dict, Union
 from src import modules
 from src.logger_cfg import logger, with_spinner
 import numpy as np
 from .regression import REGRESSOR, RegModel
-from .classification import CLASSIFIER
+from .classification import CLASSIFIER, ClasModel
 
 
 class PredictorConfig:
@@ -51,7 +51,7 @@ class Predictor:
         "regression": REGRESSOR,
         "classification": CLASSIFIER,
     }
-    def __init__(self, cfg: PredictorConfig, model: RegModel = None):
+    def __init__(self, cfg: PredictorConfig, model: Union[RegModel, ClasModel] = None):
         self.cfg = cfg
         self.model = model
         self.predictor = None
