@@ -96,7 +96,7 @@ class Dataset:
 
 if __name__ == "__main__":
     config = DatasetConfig(
-        folder_path="../../examples",
+        folder_path="../../datasets",
         dataset_name="insurance_charges",
         extension="csv",
         separator=",",
