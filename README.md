@@ -10,14 +10,13 @@
 
 ---
 
-<div style="background-color: lightgray; padding: 10px; border-radius: 5px;">
+<pre> ```plaintext This is normal text with a grey background. ``` </pre>
 
 `yaml-ML` is a Python package that facilitates the creation and 
 running of pipelines to pre-process data 
 and train basic machine learning models in a supervised manner, 
 by providing the whole instructions through a bunch of keywords in a YAML file.
 
-</div>
 
 ---
 
