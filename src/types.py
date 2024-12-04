@@ -9,4 +9,5 @@ LoadedYAMLType: TypeAlias = Tuple[
     Dict[str, Dict[str, Any]],
     Dict[str, Dict[str, Any]],
     Dict[str, Dict[str, Dict[str, Any]]],
+    str,
 ]

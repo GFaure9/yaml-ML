@@ -61,3 +61,5 @@ model:
 #      kernel: 'rbf'
 #      C: 10
 #      epsilon: 0.1
+
+score: 'rmse'

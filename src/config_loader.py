@@ -13,5 +13,6 @@ def load_yaml_config(filepath: str) -> LoadedYAMLType:
     prepro_cfg: Dict[str, Dict[str, Any]] = data["preprocessing"]
     split_cfg: Dict[str, Dict[str, Any]] = data["dataset"]["split"]
     model_cfg: Dict[str, Dict[str, Dict[str, Any]]] = data["model"]
+    score: str = data["score"]
 
-    return logs, trg_var, loading_cfg, prepro_cfg, split_cfg, model_cfg
+    return logs, trg_var, loading_cfg, prepro_cfg, split_cfg, model_cfg, score

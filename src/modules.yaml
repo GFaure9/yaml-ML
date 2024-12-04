@@ -7,6 +7,7 @@ loading:
 preprocessing:
   cont:
     cleaning:
+      - remove_col
       - remove_nans
       - remove_outliers
     replace_nans:
@@ -21,6 +22,7 @@ preprocessing:
       - robust
   cat:
     cleaning:
+      - remove_col
       - remove_nans
     replace_nans:
       - most_frequent
@@ -59,3 +61,18 @@ models:
     - ada_boost
     - knn
     - mlp
+
+scores:
+  regression:
+    - mse
+    - rmse
+    - mae
+    - r2
+    - mape
+  classification:
+    - f1
+    - recall
+    - precision
+    - accuracy
+    - cross_entropy
+    - auc

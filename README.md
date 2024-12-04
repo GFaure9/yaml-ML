@@ -1,8 +1,6 @@
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="./logo/logo2_colored.png" width="400" />)
-
-[//]: # (</p>)
+<p align="center">
+  <img src="./logo/logo2_colored.png" width="400" />
+</p>
 <p align="center">
   <img src="./logo/logo_drawing.png" width="400" />
 </p>
@@ -10,15 +8,14 @@
   <img src="./logo/logo_sentence.png" width="400" />
 </p>
 
-[//]: # (_This is the official main repository for `yaml-ML` Python package._)
+---
 
-___
+`yaml-ML` is a Python package that facilitates the creation and 
+running of pipelines to pre-process data 
+and train basic machine learning models in a supervised manner, 
+by providing the whole instructions through a bunch of keywords in a YAML file.
 
-<p align="left">
-  <img src="./logo/logo_with_desc.png" width="800" />
-</p>
-
-___
+---
 
 # ⏩ Quickstart
 

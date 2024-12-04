@@ -55,6 +55,7 @@ class Predictor:
         self.cfg = cfg
         self.model = model
         self.predictor = None
+        self.score = None
 
     def initialize(self):
         d, c = self.models_dicts, self.cfg
@@ -71,6 +72,12 @@ class Predictor:
     def infer(self, x):
         if self.model.fmt == "sklearn":
             return self.predictor.predict(x)
+
+    def score(self, X: np.ndarray, y: np.ndarray) -> float:
+        pass
+
+    def save(self, out_folder: str, out_name: str):
+        pass
 
 
 # todo: add method to save the model

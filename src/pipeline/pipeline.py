@@ -24,7 +24,7 @@ class Pipeline:
 
     def run(self, pth: str = None):
         # Load YAML config
-        logs, trg_var, loading_dic, prepro_dic, split_dic, model_dic = self.load_cfg(pth)
+        logs, trg_var, loading_dic, prepro_dic, split_dic, model_dic, score = self.load_cfg(pth)
 
         # Configure logger
         if logs:
@@ -84,7 +84,7 @@ class Pipeline:
                 trg_var_type = prepro_config.variables_types[trg_var]
             except Exception as e:
                 wrn_msg = "\n".join([
-                    "fCould not retrieve target variable type due to: {e}",
+                    f"Could not retrieve target variable type due to: {e}",
                     "Will try to perform stratified split anyways..."
                 ])
                 logger.warning(wrn_msg)
@@ -103,7 +103,7 @@ class Pipeline:
 
         logger.info("----------------------------- Success!\n")
 
-        # 3. Train the model
+        # 3. Train the model / compute its score / save the model
         if model_dic:
             logger.info("----------------------------- Starting building model...")
 
