@@ -11,10 +11,9 @@
 ---
 
 <pre> 
-*yaml-ML* is a Python package that facilitates the creation and 
-running of pipelines to pre-process data 
-and train basic machine learning models in a supervised manner, 
-by providing the whole instructions through a bunch of keywords in a YAML file. 
+yaml-ML is a Python package that facilitates the creation and running of pipelines to pre-process data 
+and train basic machine learning models in a supervised manner, by providing the whole 
+instructions through a bunch of keywords in a YAML file. 
 </pre>
 
 
