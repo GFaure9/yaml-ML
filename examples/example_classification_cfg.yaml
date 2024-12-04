@@ -51,4 +51,8 @@ model:
       min_samples_split: 2
       min_samples_leaf: 1
 
-score: 'f1'
+score: ['f1', 'accuracy', 'cross_entropy', 'recall', 'precision']
+#score: 'auc'  # todo: debug `ValueError: multi_class must be in ('ovo', 'ovr')`
+
+output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out"
+name: "classification_example"

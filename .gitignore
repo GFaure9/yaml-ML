@@ -168,3 +168,4 @@ cython_debug/
 # ================== custom ignore ===================
 /examples/examples0_data.csv
 /logo/logos.docx
+/out/

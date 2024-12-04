@@ -5,6 +5,13 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostRegressor, RandomForestRegressor, GradientBoostingRegressor
+from sklearn.metrics import (
+mean_squared_error,
+mean_absolute_error,
+root_mean_squared_error,
+r2_score,
+mean_absolute_percentage_error,
+)
 
 
 class RegModel(NamedTuple):
@@ -40,6 +47,11 @@ REGRESSOR = {
 
 
 REGRESSION_SCORE = {
+    "mse": mean_squared_error,
+    "rmse": root_mean_squared_error,
+    "mae": mean_absolute_error,
+    "r2": r2_score,
+    "mape": mean_absolute_percentage_error,
 }
 
 

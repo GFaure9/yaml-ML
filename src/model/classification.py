@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier,
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, log_loss, roc_auc_score
 
 
 class ClasModel(NamedTuple):
@@ -34,4 +35,10 @@ CLASSIFIER = {
 
 
 CLASSIFICATION_SCORE = {
+    "f1": f1_score,
+    "recall": recall_score,
+    "precision": precision_score,
+    "accuracy": accuracy_score,
+    "cross_entropy": log_loss,
+    "auc": roc_auc_score,
 }

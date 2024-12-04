@@ -1,3 +1,5 @@
+import os.path
+
 from src.config_loader import load_yaml_config, LoadedYAMLType
 from src.logger_cfg import logger, FORMAT
 from src import (
@@ -24,7 +26,7 @@ class Pipeline:
 
     def run(self, pth: str = None):
         # Load YAML config
-        logs, trg_var, loading_dic, prepro_dic, split_dic, model_dic, score = self.load_cfg(pth)
+        logs, trg_var, loading_dic, prepro_dic, split_dic, model_dic, score_name, out_folder, name = self.load_cfg(pth)
 
         # Configure logger
         if logs:
@@ -32,6 +34,13 @@ class Pipeline:
             logger.info("Enabling writing logs at: './debug.log'\n")
         else:
             logger.info("Debug logs writing is disabled\n")
+
+        # Create the output folder (if necessary)
+        if not os.path.isdir(out_folder):
+            os.mkdir(out_folder)
+            logger.info(f"Created output folder: {out_folder}\n")
+        else:
+            logger.warning(f"Output folder already exists at: {out_folder}\n")
 
         # Load the dataset
         logger.info("----------------------------- Starting dataset loading...")
@@ -118,7 +127,17 @@ class Pipeline:
             model.train(data_split.train.X, data_split.train.y)
             logger.info("Model trained")
 
+            logger.info("----------------------------- Success!")
+
+            logger.info("----------------------------- Computing score...")
+            model.compute_score(data_split.test.X, data_split.test.y, score_name)
+            logger.info("----------------------------- Success!")
+
+            logger.info("----------------------------- Saving trained model...")
+            model.save(out_folder=out_folder, out_name=name)
             logger.info("----------------------------- Success!\n")
+
+            logger.info(f"{model}")
 
 
 if __name__ == "__main__":

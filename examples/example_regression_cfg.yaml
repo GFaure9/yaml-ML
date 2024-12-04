@@ -13,7 +13,7 @@ preprocessing:
     type: "cont"
     cleaning: ['remove_nans', 'remove_outliers' ]
     replace_nans: 'median'
-    scaling: 'robust'
+#    scaling: 'robust'
   age:
     type: "cont"
     cleaning: ['remove_nans', 'remove_outliers']
@@ -55,11 +55,14 @@ model:
       hidden_layer_sizes: [50, 50]
       activation: 'relu'
       solver: 'adam'
-      max_iter: 1000
+      max_iter: 10000
       random_state: 42
 #    svr:
 #      kernel: 'rbf'
 #      C: 10
 #      epsilon: 0.1
 
-score: 'rmse'
+score: ['r2', 'mae', 'r2', 'mape', 'rmse']
+
+output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out"
+name: "regression_example"
