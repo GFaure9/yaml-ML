@@ -16,7 +16,12 @@
 
 ## 1. Installation
 
+Create a virtual environment (e.g. with `conda`), activate it and install the package using `pip`.
+
 ```commandline
+conda create --name yaml_ml_env
+conda activate yaml_ml_env
+pip install --upgrade pip
 pip install --index-url https://test.pypi.org/simple/ yaml_ml
 ```
 
