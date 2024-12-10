@@ -1,8 +1,8 @@
 import os.path
 
-from src.config_loader import load_yaml_config, LoadedYAMLType
-from src.logger_cfg import logger, FORMAT
-from src import (
+from yaml_ml.config_loader import load_yaml_config, LoadedYAMLType
+from yaml_ml.logger_cfg import logger, FORMAT
+from yaml_ml import (
 Dataset, DatasetConfig,
 PreProcessor, PreProcessorConfig,
 Splitter, SplitterConfig,

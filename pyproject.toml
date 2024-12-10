@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["yaml_ml"]
+
+[project]
+name = "yaml_ml"
+version = "0.0.1"
+authors = [
+  {name="GFaure9"},
+]
+description = "Your whole ML pipeline in one YAML file."
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+Repository = "https://github.com/GFaure9/yaml-ML"

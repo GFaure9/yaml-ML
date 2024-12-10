@@ -1,6 +1,6 @@
 from typing import Dict, List
-from src import modules, Dataset
-from src.logger_cfg import logger
+from yaml_ml import modules, Dataset
+from yaml_ml.logger_cfg import logger
 from .cleaning import clean
 from .replace_nans import replace_nans
 from .encoding import encode

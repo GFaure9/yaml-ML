@@ -61,7 +61,7 @@ def with_spinner(style: str = None):
                 # Stop the spinner
                 STOP_SPINNER = True
                 spinner_thread.join()
-                print(f'\r✔ {func.__name__} completed!', flush=True)
+                print(f'\r✔ {func.__name__} completed!      ', flush=True)
 
             return result
 

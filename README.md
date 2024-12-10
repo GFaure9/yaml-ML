@@ -16,16 +16,22 @@
 
 ## 1. Installation
 
-TODO
+```commandline
+pip install --index-url https://test.pypi.org/simple/ yaml_ml
+```
 
 ## 2. Usage
 
-TODO
+After having activated the environment where `yaml_ml` is installed, run the command:
+
+```commandline
+python -m yaml_ml --cfg path/to/your/config/yaml/file
+```
 
 ## 3. Docs
 
-TODO
+🚧 Work in progress...Coming soon!
 
 # 📖 Usage Example: Step-by-Step
 
-TODO
+🚧 Work in progress...Coming soon!

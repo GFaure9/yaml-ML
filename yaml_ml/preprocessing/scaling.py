@@ -1,6 +1,6 @@
 from sklearn.base import TransformerMixin
-from src.types import ArrayLike
-from src.logger_cfg import logger
+from yaml_ml.special_types import ArrayLike
+from yaml_ml.logger_cfg import logger
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, MaxAbsScaler, RobustScaler
 
 

@@ -1,7 +1,7 @@
-from src.types import ArrayLike
+from yaml_ml.special_types import ArrayLike
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 from sklearn.base import TransformerMixin
-from src.logger_cfg import logger
+from yaml_ml.logger_cfg import logger
 
 
 def encode(x, mtd: str, var_type: str) -> ArrayLike:

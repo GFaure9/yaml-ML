@@ -1,6 +1,6 @@
 from typing import Dict, Union, List
-from src import modules
-from src.logger_cfg import logger, with_spinner
+from yaml_ml import modules
+from yaml_ml.logger_cfg import logger, with_spinner
 import numpy as np
 from .regression import REGRESSOR, RegModel, REGRESSION_SCORE
 from .classification import CLASSIFIER, ClasModel, CLASSIFICATION_SCORE
@@ -122,6 +122,12 @@ class Predictor:
                 pickle.dump(self.predictor, f)
             logger.info(f"Saved the trained model in a binary format at: {save_path}")
             self.save_path = save_path
+
+            info_path = f"{out_folder}/{out_name}__info.txt"
+            with open(info_path, "w") as f:
+                f.write(self.__repr__())
+            logger.info(f"Information file (model, status, scores...) was saved at: {info_path}")
+
         else:
             wrn_msg = "No model was saved since no predictor was built. Please run `initialize()` and `train()` method first"
             logger.warning(wrn_msg)

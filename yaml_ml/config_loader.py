@@ -1,5 +1,5 @@
 from typing import Dict, Any, Union, List
-from src.types import LoadedYAMLType
+from yaml_ml.special_types import LoadedYAMLType
 import yaml
 
 

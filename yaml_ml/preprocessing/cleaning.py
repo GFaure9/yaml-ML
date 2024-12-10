@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from src.logger_cfg import logger
+from yaml_ml.logger_cfg import logger
 
 
 def clean(x, mtd: str, var_type: str) -> List[int]:

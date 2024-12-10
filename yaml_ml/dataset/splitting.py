@@ -1,6 +1,6 @@
 from typing import Dict, NamedTuple, Optional
 import numpy as np
-from src.logger_cfg import logger
+from yaml_ml.logger_cfg import logger
 from sklearn.model_selection import train_test_split
 
 

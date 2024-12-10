@@ -1,0 +1,33 @@
+1st prio
+________
+
+* save info on model + score in a txt file (predictor + pipeline)
+* create __main__.py file
+* make it a python package
+
+
+
+2nd prio
+--------
+
+* add docstring (short) + some comments
+* create usage documentation
+
+
+3rd prio
+--------
+
+* write README
+
+
+4th prio
+--------
+
+* create app with streamlit
+
+
+5th prio
+--------
+
+* debug auc
+* add xgboost
