@@ -4,6 +4,7 @@ from yaml_ml.logger_cfg import logger, with_spinner
 import numpy as np
 from .regression import REGRESSOR, RegModel, REGRESSION_SCORE
 from .classification import CLASSIFIER, ClasModel, CLASSIFICATION_SCORE
+from .utils import format_table
 from sklearn.preprocessing import LabelEncoder
 import pickle
 
@@ -124,8 +125,8 @@ class Predictor:
             self.save_path = save_path
 
             info_path = f"{out_folder}/{out_name}__info.txt"
-            with open(info_path, "w") as f:
-                f.write(self.__repr__())
+            with open(info_path, "w", encoding="utf-8") as f:
+                f.write(self.__repr__(), )
             logger.info(f"Information file (model, status, scores...) was saved at: {info_path}")
 
         else:
@@ -133,17 +134,27 @@ class Predictor:
             logger.warning(wrn_msg)
 
     def __repr__(self):
-        mdl_txt = f"MODEL   | {self.cfg.prediction_type.capitalize()}[model={self.cfg.model_name.upper()}, format={self.model.fmt}]" if self.model else "NONE"
+        mdl_txt = f"{'MODEL':<20} | "
+        mdl_txt += f"{self.cfg.prediction_type.capitalize()}[model={self.cfg.model_name.upper()}, format={self.model.fmt}]" if self.model else "NONE"
+
+        h_params_txt = f"\n{'HYPERPARAMETERS':<20}\n{format_table(self.cfg.h_params)}"
+
         trained = "yes" if self.predictor else "no"
-        train_txt = f"TRAINED | {trained}"
+        train_txt = f"{'TRAINED':<20} | {trained}"
+
         sv_pth = self.save_path if self.save_path else "None"
-        sv_txt = f"PATH    | {sv_pth}"
-        scr_txt = f"SCORE   | " + "".join([f"{s.upper()} [{v:.3f}]    " for s, v in self.score.items()]) if self.score else "NONE"
+        sv_txt = f"{'PATH':<20} | {sv_pth}"
+
+        scr_txt = f"{'SCORE':<20} | "
+        scr_txt += "".join([f"{s.upper()} [{v:.3f}]    " for s, v in self.score.items()]) if self.score else "NONE"
+
         n = max([len(mdl_txt), len(scr_txt), len(sv_txt), len(train_txt)])
+
         txt = "\n".join([
             "",
             n * "_",
             mdl_txt,
+            h_params_txt,
             train_txt,
             sv_txt,
             n * "=",
@@ -151,9 +162,3 @@ class Predictor:
             n * "_",
         ])
         return txt
-
-
-# todo: add method to save the model
-# todo: add method to compute scores (in regression/classification files put the methods)
-# todo: add method to save scores
-# todo: add all these to the pipeline

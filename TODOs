@@ -12,6 +12,7 @@ ________
 
 * add docstring (short) + some comments
 * create usage documentation
+* add unit test and CI/CD process
 
 
 3rd prio
