@@ -36,7 +36,7 @@ python -m yaml_ml --cfg path/to/your/config/yaml/file
 
 ## 3. Docs
 
-🚧 Work in progress...Coming soon!
+Some guidelines about how to define a configuration file are given [here](https://gfaure9.github.io/yaml-ML/).
 
 # 📖 Usage Example: Step-by-Step
 
