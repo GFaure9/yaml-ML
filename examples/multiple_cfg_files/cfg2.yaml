@@ -47,21 +47,13 @@ dataset:
 
 model:
   regression:
-    lasso:
-      alpha: 0.1
-      fit_intercept: yes
-#    mlp:
-#      hidden_layer_sizes: [50, 50]
-#      activation: 'relu'
-#      solver: 'adam'
-#      max_iter: 10000
-#      random_state: 42
-#    svr:
-#      kernel: 'rbf'
-#      C: 10
-#      epsilon: 0.1
+    random_forest:
+      n_estimators: 100
+      criterion: 'friedman_mse'
+      min_samples_split: 2
+      random_state: 42
 
 score: ['r2', 'mae', 'r2', 'mape', 'rmse']
 
-output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out"
-name: "regression_example"
+output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out/multiple"
+name: "cfg2"

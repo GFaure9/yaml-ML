@@ -30,10 +30,12 @@ class Pipeline:
 
         # Configure logger
         if logs:
-            logger.add("debug.log", level="DEBUG", colorize=False, format=FORMAT)
-            logger.info("Enabling writing logs at: './debug.log'\n")
+            debug_filename = f"debug__{name}.log"
+            logger.add(debug_filename, level="DEBUG", colorize=False, format=FORMAT)
+            logger.info(f"Enabling writing logs at: './{debug_filename}'\n")
         else:
             logger.info("Debug logs writing is disabled\n")
+        k_dash = 20
 
         # Create the output folder (if necessary)
         if not os.path.isdir(out_folder):
@@ -43,7 +45,7 @@ class Pipeline:
             logger.warning(f"Output folder already exists at: {out_folder}\n")
 
         # Load the dataset
-        logger.info("----------------------------- Starting dataset loading...")
+        logger.info(k_dash * "-" + " Starting dataset loading...")
 
         loading_cfg = DatasetConfig.from_dict(loading_dic)
         logger.info(f"Loaded DatasetConfig:\n{loading_cfg}")
@@ -53,11 +55,11 @@ class Pipeline:
             f"Loaded Dataset using previous config:\n{dataset.as_array}\nVariables: {dataset.arrays_names}"
         )
 
-        logger.info("----------------------------- Success!\n")
+        logger.info(k_dash * "-" + " Success!\n")
 
         # 1. Preprocessing
         if prepro_dic:
-            logger.info("----------------------------- Starting preprocessing...")
+            logger.info(k_dash * "-" + " Starting preprocessing...")
 
             prepro_config = PreProcessorConfig.from_dict(prepro_dic)
             logger.info(f"Loaded PreProcessorConfig")
@@ -69,14 +71,14 @@ class Pipeline:
                 f"Preprocessed Dataset using previous config:\n{dataset.as_array}\nVariables: {dataset.arrays_names}"
             )
 
-            logger.info("----------------------------- Success!\n")
+            logger.info(k_dash * "-" + " Success!\n")
         else:
             logger.warning("No preprocessing instructions were given. Trying to use data as it is...")
 
         X, y = dataset.get_X_y(trg_var_name=trg_var)
 
         # 2. Create training and test datasets (splitting)
-        logger.info("----------------------------- Starting train/test/(val) splitting...")
+        logger.info(k_dash * "-" + " Starting train/test/(val) splitting...")
 
         if split_dic:
             split_config = SplitterConfig.from_dict(d=split_dic)
@@ -110,11 +112,11 @@ class Pipeline:
         splitter = Splitter(cfg=split_config)
         data_split = splitter.run(X, y)
 
-        logger.info("----------------------------- Success!\n")
+        logger.info(k_dash * "-" + " Success!\n")
 
         # 3. Train the model / compute its score / save the model
         if model_dic:
-            logger.info("----------------------------- Starting building model...")
+            logger.info(k_dash * "-" + " Starting building model...")
 
             model_config = PredictorConfig.from_dict(model_dic)
             logger.info(f"Loaded PredictorConfig:\n{model_config}")
@@ -127,17 +129,19 @@ class Pipeline:
             model.train(data_split.train.X, data_split.train.y)
             logger.info("Model trained")
 
-            logger.info("----------------------------- Success!")
+            logger.info(k_dash * "-" + " Success!")
 
-            logger.info("----------------------------- Computing score...")
-            model.compute_score(data_split.test.X, data_split.test.y, score_name)
-            logger.info("----------------------------- Success!")
+            logger.info(k_dash * "-" + " Computing score...")
+            scores = model.compute_score(data_split.test.X, data_split.test.y, score_name)
+            logger.info(k_dash * "-" + " Success!")
 
-            logger.info("----------------------------- Saving trained model...")
+            logger.info(k_dash * "-" + " Saving trained model...")
             model.save(out_folder=out_folder, out_name=name)
-            logger.info("----------------------------- Success!\n")
+            logger.info(k_dash * "-" + " Success!\n")
 
             logger.info(f"{model}")
+
+            return {name: scores}
 
 
 if __name__ == "__main__":

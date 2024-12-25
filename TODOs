@@ -1,34 +1,16 @@
-1st prio
-________
+- finish writing html files for config file docs
+- finish writing README with usage example
+- add option to compute multiple pipelines in parallel
+- add docstring (short) + some comments
+- add unit tests and CI/CD process
+- make the whole project a python package accessible on PyPi
+  (first test it with TestPyPi)
 
-* save info on model + score in a txt file (predictor + pipeline)
-* create __main__.py file
-* make it a python package
+____________
 
+- debug AUC computation
+- add XGBoost
 
+____________
 
-2nd prio
---------
-
-* add docstring (short) + some comments
-* create usage documentation
-* add unit test and CI/CD process
-
-
-3rd prio
---------
-
-* write README
-
-
-4th prio
---------
-
-* create app with streamlit
-
-
-5th prio
---------
-
-* debug auc
-* add xgboost
+- (later) see how it can be possible to integrate yaml-ML with Streamlit

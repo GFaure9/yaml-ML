@@ -16,7 +16,7 @@ preprocessing:
   age:
     type: "cont"
     cleaning: ['remove_nans', 'remove_outliers']
-    replace_nans: 'median'
+    replace_nans: 'most_frequent'
     scaling: 'abs_max'
   sex:
     type: "cat"
@@ -29,7 +29,7 @@ preprocessing:
   bmi:
     type: "cont"
     cleaning: ['remove_nans', 'remove_outliers']
-    scaling: 'standard'
+    scaling: 'min_max'
   children:
     type: "cont"
     cleaning: 'remove_nans'
@@ -47,21 +47,15 @@ dataset:
 
 model:
   regression:
-    lasso:
-      alpha: 0.1
-      fit_intercept: yes
-#    mlp:
-#      hidden_layer_sizes: [50, 50]
-#      activation: 'relu'
-#      solver: 'adam'
-#      max_iter: 10000
-#      random_state: 42
-#    svr:
-#      kernel: 'rbf'
-#      C: 10
-#      epsilon: 0.1
+    gradient_boosting:
+      n_estimators: 100
+      learning_rate: 0.1
+      max_depth: 3
+      min_samples_split: 2
+      loss: 'squared_error'
+      random_state: 42
 
 score: ['r2', 'mae', 'r2', 'mape', 'rmse']
 
-output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out"
-name: "regression_example"
+output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out/multiple"
+name: "cfg8"

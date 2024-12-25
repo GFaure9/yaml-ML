@@ -8,7 +8,7 @@
   <img src="./logo/logo_sentence.png" width="400" />
 </p>
 
-> yaml-ML is a Python package that facilitates the creation and running of pipelines to pre-process data 
+> yaml_ml is a Python package that facilitates the creation and running of pipelines to pre-process data 
 > and train basic machine learning models in a supervised manner, 
 > by providing the whole instructions through a bunch of keywords in a YAML file.
 
@@ -44,7 +44,7 @@ python -m yaml_ml --cfg path/to/your/config/yaml/file
 
 Some guidelines about how to define a configuration file are given in the [Configuration File Documentation](https://gfaure9.github.io/yaml-ML/).
 
-You can also find examples of `yaml-ML` configuration files in the [Examples Folder](https://github.com/GFaure9/yaml-ML/tree/main/examples).
+You can also find examples of `yaml_ml` configuration files in the [Examples Folder](https://github.com/GFaure9/yaml-ML/tree/main/examples).
 
 # 📖 Usage Example: Step-by-Step
 
