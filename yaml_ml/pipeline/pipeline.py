@@ -137,6 +137,7 @@ class Pipeline:
 
             logger.info(k_dash * "-" + " Saving trained model...")
             model.save(out_folder=out_folder, out_name=name)
+            # todo: create subfolder for results ??
             logger.info(k_dash * "-" + " Success!\n")
 
             logger.info(f"{model}")
