@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .container {
+            text-align: left;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .subsection {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .subsection strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .methods {
+            background-color: #f4e1c1;
+            padding: 10px;
+            border-radius: 2px;
+            margin-left: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 0.85em;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        li span {
+            display: block;
+            margin-top: 5px;
+            padding-left: 20px;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        codesup {
+            background-color: #9accc3;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        code {
+            background-color: #cde7e6;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            font-weight: normal;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #9accc3; /* Muted Terracotta */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #7ea6a1; /* Slightly darker muted terracotta for hover effect */
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #607e78; /* Darker muted terracotta for active state */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Machine Learning Models</h2>
+
+        <div class="subsection">
+            <strong><codesup>regression</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'linear'</code><span>A linear regression model that assumes a straight-line relationship between independent variables and the target.</span></li>
+                    <li><code>'ridge'</code><span>A linear model that adds L2 regularization to penalize large coefficients.</span></li>
+                    <li><code>'lasso'</code><span>A linear model that adds L1 regularization, encouraging sparsity in the coefficients.</span></li>
+                    <li><code>'logistic'</code><span>Used for binary outcomes, it models the probability of the target as a logistic function.</span></li>
+                    <li><code>'mlp'</code><span>A multi-layer perceptron neural network, suitable for non-linear regression tasks.</span></li>
+                    <li><code>'svr'</code><span>Support Vector Regression models continuous outputs by finding a function that approximates the data within a specified margin.</span></li>
+                    <li><code>'decision_tree'</code><span>Uses a tree-like model of decisions for predicting continuous values.</span></li>
+                    <li><code>'random_forest'</code><span>A collection of decision trees that work together to improve accuracy by reducing overfitting.</span></li>
+                    <li><code>'gradient_boosting'</code><span>Builds trees sequentially, where each tree tries to correct the errors of the previous one.</span></li>
+                    <li><code>'ada_boost'</code><span>Combines multiple weak learners, focusing more on samples that were misclassified by previous learners.</span></li>
+                    <li><code>'knn'</code><span>K-Nearest Neighbors regression predicts based on the average of the nearest data points.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <strong><codesup>classification</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'logistic'</code><span>Models the probability of the target being one class versus the other using a logistic function.</span></li>
+                    <li><code>'decision_tree'</code><span>Classifies data by learning simple decision rules derived from the feature values.</span></li>
+                    <li><code>'svc'</code><span>Support Vector Classification aims to find the best boundary between classes by maximizing the margin.</span></li>
+                    <li><code>'random_forest'</code><span>A collection of decision trees for classification that provides more stability by reducing overfitting.</span></li>
+                    <li><code>'gradient_boosting'</code><span>Builds classifiers sequentially, focusing on correcting the errors of the previous classifiers.</span></li>
+                    <li><code>'ada_boost'</code><span>Combines several weak classifiers to form a strong classifier by focusing on previously misclassified points.</span></li>
+                    <li><code>'knn'</code><span>K-Nearest Neighbors assigns a class based on the majority class among its nearest neighbors.</span></li>
+                    <li><code>'mlp'</code><span>A neural network for classification tasks, capable of learning non-linear decision boundaries.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <a href="index.html" class="button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

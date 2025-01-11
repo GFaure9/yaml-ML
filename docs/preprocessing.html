@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preprocessing</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .container {
+            text-align: left;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .subsection {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .subsection strong {
+            display: block;
+            margin-bottom: 10px; /* Add space between subsection title and methods */
+        }
+
+        .methods {
+            background-color: #f4e1c1;
+            padding: 10px;
+            border-radius: 2px;
+            margin-left: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 0.85em;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        li span {
+            display: block; /* Ensures description goes to the next line */
+            margin-top: 5px; /* Adds space between the method name and description */
+            padding-left: 20px; /* Adds indentation to the description */
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        codesup {
+            background-color: #9accc3; /* Soft muted teal */
+            color: #333; /* Black text for readability */
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        code {
+            background-color: #cde7e6; /* Soft muted teal */
+            color: #333; /* Black text for readability */
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            font-weight: normal;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #9accc3; /* Muted Terracotta */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #7ea6a1; /* Slightly darker muted terracotta for hover effect */
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #607e78; /* Darker muted terracotta for active state */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Preprocessing Methods</h2>
+
+        <div class="subsection">
+            <strong><codesup>cleaning</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'remove_col'</code><span>Removes the specified column</span></li>
+                    <li><code>'remove_nans'</code><span>Removes rows with NaN values</span></li>
+                    <li><code>'remove_outliers'</code> for continuous variable only<span>Removes data points classified as outliers using IQR method</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <strong><codesup>replace_nans</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'median'</code> for continuous variable only<span>Replace NaN values with the median of the column</span></li>
+                    <li><code>'mean'</code> for continuous variable only<span>Replace NaN values with the mean of the column</span></li>
+                    <li><code>'most_frequent'</code><span>Replace NaN values with the most frequent value</span></li>
+                    <li><code>{'value': VALUE}</code><span>Replace NaN values with the given VALUE</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <strong><codesup>scaling</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'min_max'</code> for continuous variable only<span>Subtract the column by the min value and divide by (max - min)</span></li>
+                    <li><code>'abs_max'</code> for continuous variable only<span>Divide the column by the absolute value of the max</span></li>
+                    <li><code>'standard'</code> for continuous variable only<span>Standardize the column (mean=0, std=1)</span></li>
+                    <li><code>'robust'</code> for continuous variable only<span>Subtract the column by the median and divide by IQR</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <strong><codesup>encoding</codesup></strong>
+            <div class="methods">
+                <ul>
+                    <li><code>'binary'</code> for categorical variable only<span>Encodes categorical variables using binary encoding</span></li>
+                    <li><code>'one_hot'</code> for categorical variable only<span>Encodes categorical variables using one-hot encoding</span></li>
+                    <li><code>'ordinal'</code> for categorical variable only<span>Encodes categorical variables using ordinal encoding</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <a href="index.html" class="button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yaml-ML Configuration File Documentation</title>
     <style>
         body {
-            font-family: Source Code Pro, monospace; */ Arial, sans-serif; */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: # ffffff; /* # f0f0f0; */
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,30 +26,6 @@
             text-align: center;
             max-width: 800px;
             margin: 20px;
-        }
-
-        .papyrus {
-            width: 100%;
-            max-width: 600px;
-            background-color: #f4e1c1; /* Light beige, papyrus-like color */
-            margin: 30px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            font-family: "Courier New", Courier, monospace; /* Monospaced font for code feel */
-            font-size: 16px;
-            line-height: 1.6;
-            overflow-x: auto; /* Allow horizontal scrolling */
-            max-height: 500px;
-            text-align: left; /* Align the content to the left */
-            padding: 20px; /* Add padding to create space around the content */
-            white-space: pre; /* Preserve spaces and line breaks */
-        }
-
-        .papyrus pre {
-            display: block;
-            white-space: nowrap; /* Prevent text wrapping */
-            margin: 0;
-            padding: 0;
         }
 
         code {
@@ -68,55 +45,98 @@
         .blu {
             color: #1E90FF;
         }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .button1 {
+            display: inline-block;
+            background-color: #6fa3b6; /* Soft teal blue */
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 30px; /* Slightly more rounded for a modern feel */
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1); /* Softer shadow for a sleek look */
+            font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smoother transition */
+            text-align: center;
+            margin: 10px;
+        }
+
+        .button1:hover {
+            transform: translateY(-5px); /* Slightly more lifted hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow to enhance the lifted feel */
+            background-color: #4c8c9c; /* Slightly darker teal for hover */
+        }
+
+        .button1:active {
+            transform: translateY(2px); /* Slight downward shift when clicked */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow on click for a pressed effect */
+            background-color: #3d7a7a; /* Darker teal when pressed */
+        }
+
+        .button2 {
+            display: inline-block;
+            background-color: #9accc3; /* Soft Aqua */
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .button2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #8abfb0; /* Slightly darker aqua for hover effect */
+        }
+
+        .button2:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #7fa29c; /* Darker teal for active state */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Spacing between buttons */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>How to write a configuration file for <code>yaml-ML</code> ?</h2>
-        <p>The configuration should be a YAML file, following the format explained below.</p>
+        <h2>How to write a configuration file for <code>yaml_ml</code> ?</h2>
+        <p>Click the button below to see how you should format your YAML configuration file.</p>
 
-        <div class="papyrus">
-<strong>logs</strong>: <span class="mag">yes OR no</span> <span class="blu"># whether to save logs or not</span>
+        <!-- Papyrus section now a button -->
+        <a href="yaml_file.html" class="button1">YAML Configuration File Format</a>
 
-<strong>loading</strong>:
-  folder: <span class="mag">"path/to/your/dataset/folder"</span>
-  name: <span class="mag">"name_of_your_data_file"</span>
-    format: <span class="mag">"format_of_your_data_file"</span> <span class="blu"># e.g. 'csv'</span>
-    separator: <span class="mag">"columns_separator_in_your_data_file"</span> <span class="blu"># e.g. ','</span>
+        <div class="section">
+            <p>Click the buttons below for detailed information about available data preprocessing methods and ML models.</p>
 
-<strong>target_var</strong>: <span class="mag">"name_of_the_target_variable_in_the_data_file"</span>
-
-<strong>preprocessing</strong>:
-  <span class="mag">name_of_column_1_in_your_data_file</span>:
-    type: <span class="mag">"cont" OR "cat"</span> <span class="blu"># either continuous or categorial</span>
-    cleaning: <span class="mag">"cleaning_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'remove_col' or 'remove_nans' or 'remove_outliers' or a list of these</span>
-    replace_nans: <span class="mag">"method_to_apply_to_replace_NaN_values_for_column_1"</span> <span class="blu"># e.g. 'median' or 'mean' or 'most_frequent' or {'value': VALUE}</span>
-    scaling: <span class="mag">"scaling_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'min_max' or 'abs_max' or 'standard' or 'robust' (WARNING: only for continuous variables)</span>
-    encoding: <span class="mag">"encoding_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'binary' or 'one_hot' (WARNING: only for categorial variables)</span>
-  ...
-  <span class="mag">name_of_column_N_in_your_data_file</span>:
-    ...
-
-<strong>dataset</strong>:
-  split:
-    stratified: <span class="mag">yes OR no</span> <span class="blu"># whether to ensure same proportion of target variable values in train and test sets</span>
-    train: <span class="mag">INT between 0 and 100 (proportion of the whole dataset for training)</span> <span class="blu"># e.g. 80 (percent)</span>
-    test: <span class="mag">INT between 0 and 100 (proportion of the whole dataset for testing)</span> <span class="blu"># e.g. 20 (percent)</span>
-    val: <span class="mag">INT between 0 and 100 (proportion of the training dataset for validation)</span> <span class="blu"># e.g. 10 (percent)</span>
-
-<strong>model</strong>:
-  <span class="mag">classification_OR_regression</span>:
-    <span class="mag">name_of_the_model</span>:
-      <span class="mag">hyperparameter_1_of_the_model:</span> <span class="mag">VALUE_1</span>
-      ...
-      <span class="mag">hyperparameter_K_of_the_model:</span> <span class="mag">VALUE_K</span>
-
-<strong>score</strong>: <span class="mag">"score_or_list_of_scores_to_compute"</span> <span class="blu"># e.g. 'f1' or 'cross_entropy' for classification ; "rmse" or "mae" for regression ; it can be a list</span>
-
-<strong>output_folder</strong>: <span class="mag">"path/to/your/output/folder"</span>
-<strong>name</strong>: <span class="mag">"name_of_your_model_to_be_saved"</span>
+            <div class="button-container">
+                <a href="preprocessing.html" class="button2">Preprocessing Methods</a>
+                <a href="models.html" class="button2">Machine Learning Models</a>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
+
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Configuration File Format</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .papyrus {
+            width: 100%;
+            max-width: 600px;
+            background-color: #f4e1c1; /* Light beige, papyrus-like color */
+            margin: 30px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-family: "Courier New", Courier, monospace; /* Monospaced font for code feel */
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto; /* Allow horizontal scrolling */
+            max-height: 500px;
+            text-align: left; /* Align the content to the left */
+            padding: 20px; /* Add padding to create space around the content */
+            white-space: pre; /* Preserve spaces and line breaks */
+        }
+
+        .papyrus pre {
+            display: block;
+            white-space: nowrap; /* Prevent text wrapping */
+            margin: 0;
+            padding: 0;
+        }
+
+        code {
+            background-color: #e0e0e0; /* Light grey background */
+            color: #333; /* Dark text for readability */
+            padding: 2px 6px; /* Add padding around the text */
+            border-radius: 6px; /* Rounded corners */
+            font-family: 'Courier New', Courier, monospace; /* Monospace font */
+            font-size: 0.9em; /* Slightly smaller font size */
+            display: inline-block; /* Ensures it appears as a small box */
+        }
+
+        .mag {
+            color: magenta;
+            font-style: italic;
+        }
+        .blu {
+            color: #1E90FF;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #6fa3b6; /* Muted Terracotta */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #4c8c9c; /* Slightly darker muted terracotta for hover effect */
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #3d7a7a; /* Darker muted terracotta for active state */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>YAML Configuration File Format</h2>
+
+        <div class="papyrus">
+<strong>logs</strong>: <span class="mag">yes OR no</span> <span class="blu"># whether to save logs or not</span>
+
+<strong>loading</strong>:
+  folder: <span class="mag">"path/to/your/dataset/folder"</span>
+  name: <span class="mag">"name_of_your_data_file"</span>
+  format: <span class="mag">"format_of_your_data_file"</span> <span class="blu"># e.g. 'csv'</span>
+  separator: <span class="mag">"columns_separator_in_your_data_file"</span> <span class="blu"># e.g. ','</span>
+
+<strong>target_var</strong>: <span class="mag">"name_of_the_target_variable_in_the_data_file"</span>
+
+<strong>preprocessing</strong>:
+  <span class="mag">name_of_column_1_in_your_data_file</span>:
+    type: <span class="mag">"cont" OR "cat"</span> <span class="blu"># either continuous or categorial</span>
+    cleaning: <span class="mag">"cleaning_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'remove_col' or 'remove_nans' or 'remove_outliers' or a list of these</span>
+    replace_nans: <span class="mag">"method_to_apply_to_replace_NaN_values_for_column_1"</span> <span class="blu"># e.g. 'median' or 'mean' or 'most_frequent' or {'value': VALUE}</span>
+    scaling: <span class="mag">"scaling_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'min_max' or 'abs_max' or 'standard' or 'robust' (WARNING: only for continuous variables)</span>
+    encoding: <span class="mag">"encoding_method_to_apply_to_the_column_1"</span> <span class="blu"># e.g. 'binary' or 'one_hot' (WARNING: only for categorial variables)</span>
+  ...
+  <span class="mag">name_of_column_N_in_your_data_file</span>:
+    ...
+
+<strong>dataset</strong>:
+  split:
+    stratified: <span class="mag">yes OR no</span> <span class="blu"># whether to ensure same proportion of target variable values in train and test sets</span>
+    train: <span class="mag">INT between 0 and 100 (proportion of the whole dataset for training)</span> <span class="blu"># e.g. 80 (percent)</span>
+    test: <span class="mag">INT between 0 and 100 (proportion of the whole dataset for testing)</span> <span class="blu"># e.g. 20 (percent)</span>
+    val: <span class="mag">INT between 0 and 100 (proportion of the training dataset for validation)</span> <span class="blu"># e.g. 10 (percent)</span>
+
+<strong>model</strong>:
+  <span class="mag">classification OR regression</span>:
+    <span class="mag">name_of_the_model</span>:
+      <span class="mag">hyperparameter_1_of_the_model:</span> <span class="mag">VALUE_1</span>
+      ...
+      <span class="mag">hyperparameter_K_of_the_model:</span> <span class="mag">VALUE_K</span>
+
+<strong>score</strong>: <span class="mag">"score_or_list_of_scores_to_compute"</span> <span class="blu"># e.g. 'f1' or 'cross_entropy' for classification ; "rmse" or "mae" for regression ; it can be a list</span>
+
+<strong>output_folder</strong>: <span class="mag">"path/to/your/output/folder"</span>
+<strong>name</strong>: <span class="mag">"name_of_your_model_to_be_saved"</span>
+        </div>
+
+        <!-- Button to go back to the main page -->
+        <a href="index.html" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

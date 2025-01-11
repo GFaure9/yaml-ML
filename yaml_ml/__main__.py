@@ -39,6 +39,5 @@ if __name__ == "__main__":
     parser.add_argument("--cfg", required=True, type=str, help=cfg_help_text)
     parser.add_argument("--cpu", required=False, type=int, help=cpu_help_text)
     args = parser.parse_args()
-    cfg_pth = args.cfg
 
-    main(cfg_pth)
+    main(args.cfg, args.cpu)

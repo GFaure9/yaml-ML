@@ -136,8 +136,10 @@ class Pipeline:
             logger.info(k_dash * "-" + " Success!")
 
             logger.info(k_dash * "-" + " Saving trained model...")
-            model.save(out_folder=out_folder, out_name=name)
-            # todo: create subfolder for results ??
+            results_path = f"{out_folder}/res"
+            if not os.path.isdir(results_path):
+                os.mkdir(results_path)
+            model.save(out_folder=results_path, out_name=name)
             logger.info(k_dash * "-" + " Success!\n")
 
             logger.info(f"{model}")
