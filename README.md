@@ -44,7 +44,7 @@ python -m yaml_ml --cfg path/to/your/config/yaml/file
 
 Some guidelines about how to define a configuration file are given in the [Configuration File Documentation](https://gfaure9.github.io/yaml-ML/).
 
-All available options are consolidated in [yaml_ml/modules.yaml](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/modules.yaml).
+All available options are consolidated in the [Modules File](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/modules.yaml).
 
 You can also find examples of `yaml_ml` configuration files in the [Examples Folder](https://github.com/GFaure9/yaml-ML/tree/main/examples).
 
