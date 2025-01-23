@@ -31,6 +31,10 @@
 > and train basic machine learning models in a supervised manner, 
 > by providing the whole instructions through a bunch of keywords in a YAML file.
 
+> [!WARNING]
+> *Disclaimer*: this is the very first version of the package, that is still under development.
+> Do not use in production, or at your own risk.
+
 # Table of Contents 
 
 [Quickstart](#-quickstart)
