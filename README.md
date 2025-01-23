@@ -31,6 +31,15 @@
 > and train basic machine learning models in a supervised manner, 
 > by providing the whole instructions through a bunch of keywords in a YAML file.
 
+# Table of Contents 
+
+1. [Installation](#1-installation)
+2. [Usage](#2-usage)
+3. [Docs](#3-docs)
+4. [Example](#-usage-example-step-by-step)
+
+---
+
 # ⏩ Quickstart
 
 ## 1. Installation
@@ -51,7 +60,7 @@ pip install yaml_ml
 
 ## 2. Usage
 
-#### *With One Configuration File*
+#### *i. With One Configuration File*
 
 First, create a YAML configuration file: see [docs](#3-docs).
 Then, after having activated the environment where `yaml_ml` is installed, run the command:
@@ -60,9 +69,9 @@ Then, after having activated the environment where `yaml_ml` is installed, run t
 python -m yaml_ml --cfg path/to/your/config/yaml/file
 ```
 
-#### *With Multiple Configuration Files*
+#### *ii. With Multiple Configuration Files*
 
-In the case you want to test different configurations, create corresponding YAML files
+In case you want to test different configurations, create corresponding YAML files
 and put them in a unique folder. 
 To launch all the corresponding pipelines using multiprocessing over `N` CPU cores, run the command:
 
@@ -72,7 +81,6 @@ python -m yaml_ml --cfg path/to/your/configs/folder --cpu N
 
 >[!NOTE]
 > Without providing the `--cpu` argument, pipelines will be launched sequentially.
-
 
 ## 3. Docs
 
@@ -84,4 +92,4 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 # 📖 Usage Example: Step-by-Step
 
-Now that you have installed the package, let's break down at a practical example.
+Now that you have installed the package, let's break down a practical example.
