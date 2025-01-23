@@ -19,8 +19,11 @@
   <img src="./logo/logo3.png" width="400" />
 </p>
 
+### *Your whole ML pipeline in one YAML file!*
 
-*Your whole ML pipeline in one YAML file!*
+![GitHub Repo stars](https://img.shields.io/github/stars/GFaure9/yaml-ML?style=social)
+![GitHub All Releases](https://img.shields.io/github/downloads/GFaure9/yaml-ML/total)
+![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
 > yaml_ml is a Python package that facilitates the creation and running of pipelines to pre-process data 
 > and train basic machine learning models in a supervised manner, 
