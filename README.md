@@ -60,7 +60,7 @@ pip install yaml_ml
 
 ## 2. Usage
 
-#### *i. With one configuration file*
+#### <u>With one configuration file</u>
 
 First, create a YAML configuration file: see [docs](#3-docs).
 Then, after having activated the environment where `yaml_ml` is installed, run the command:
@@ -69,7 +69,7 @@ Then, after having activated the environment where `yaml_ml` is installed, run t
 python -m yaml_ml --cfg path/to/your/config/yaml/file
 ```
 
-#### *ii. With multiple configuration files*
+#### <u>ii. With multiple configuration files</u>
 
 In case you want to test different configurations, create corresponding YAML files
 and put them in a unique folder. 
