@@ -33,12 +33,12 @@
 
 # Table of Contents 
 
+[Quickstart](#-quickstart)
 1. [Installation](#1-installation)
 2. [Usage](#2-usage)
 3. [Docs](#3-docs)
-4. [Example](#-usage-example-step-by-step)
 
----
+[Usage Example](#-usage-example-step-by-step)
 
 # ⏩ Quickstart
 
@@ -60,7 +60,7 @@ pip install yaml_ml
 
 ## 2. Usage
 
-#### *i. With One Configuration File*
+#### *i. With one configuration file*
 
 First, create a YAML configuration file: see [docs](#3-docs).
 Then, after having activated the environment where `yaml_ml` is installed, run the command:
@@ -69,7 +69,7 @@ Then, after having activated the environment where `yaml_ml` is installed, run t
 python -m yaml_ml --cfg path/to/your/config/yaml/file
 ```
 
-#### *ii. With Multiple Configuration Files*
+#### *ii. With multiple configuration files*
 
 In case you want to test different configurations, create corresponding YAML files
 and put them in a unique folder. 
@@ -92,4 +92,6 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 # 📖 Usage Example: Step-by-Step
 
-Now that you have installed the package, let's break down a practical example.
+Now that the package is installed, let's have a look to a practical example.
+
+Let's say that we have a dataset of 
