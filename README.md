@@ -69,7 +69,7 @@ Then, after having activated the environment where `yaml_ml` is installed, run t
 python -m yaml_ml --cfg path/to/your/config/yaml/file
 ```
 
-#### <u>ii. With multiple configuration files</u>
+#### <u>With multiple configuration files</u>
 
 In case you want to test different configurations, create corresponding YAML files
 and put them in a unique folder. 
