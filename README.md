@@ -19,6 +19,8 @@
   <img src="./logo/logo3.png" width="400" />
 </p>
 
+<hr style="border: 0.5px solid grey">
+
 ### *Your whole ML pipeline in one YAML file!*
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/GFaure9/yaml-ML?style=social)
