@@ -1,12 +1,25 @@
+[//]: # (<p align="center">)
+
+[//]: # (  <img src="./logo/logo2_colored.png" width="400" />)
+
+[//]: # (</p>)
+
+[//]: # (<p align="center">)
+
+[//]: # (  <img src="./logo/logo_drawing.png" width="400" />)
+
+[//]: # (</p>)
+
+[//]: # (<p align="center">)
+
+[//]: # (  <img src="./logo/logo_sentence.png" width="400" />)
+
+[//]: # (</p>)
 <p align="center">
-  <img src="./logo/logo2_colored.png" width="400" />
+  <img src="./logo/logo3.png" width="400" />
 </p>
-<p align="center">
-  <img src="./logo/logo_drawing.png" width="400" />
-</p>
-<p align="center">
-  <img src="./logo/logo_sentence.png" width="400" />
-</p>
+
+Your whole ML pipeline in one YAML file!
 
 > yaml_ml is a Python package that facilitates the creation and running of pipelines to pre-process data 
 > and train basic machine learning models in a supervised manner, 
