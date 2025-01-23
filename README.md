@@ -19,7 +19,7 @@
   <img src="./logo/logo3.png" width="400" />
 </p>
 
-<hr>
+---
 
 ### *Your whole ML pipeline in one YAML file!*
 
@@ -46,18 +46,33 @@ pip install --upgrade pip
 Then install the package:
 
 ```commandline
-pip install --index-url https://test.pypi.org/simple/yaml_ml
+pip install yaml_ml
 ```
-
-🚧 Not yet uploaded...Coming soon!
 
 ## 2. Usage
 
-After having activated the environment where `yaml_ml` is installed, run the command:
+#### *With One Configuration File*
+
+First, create a YAML configuration file: see [docs](#3-docs).
+Then, after having activated the environment where `yaml_ml` is installed, run the command:
 
 ```commandline
 python -m yaml_ml --cfg path/to/your/config/yaml/file
 ```
+
+#### *With Multiple Configuration Files*
+
+In the case you want to test different configurations, create corresponding YAML files
+and put them in a unique folder. 
+To launch all the corresponding pipelines using multiprocessing over `N` CPU cores, run the command:
+
+```commandline
+python -m yaml_ml --cfg path/to/your/configs/folder --cpu N 
+```
+
+>[!NOTE]
+> Without providing the `--cpu` argument, pipelines will be launched sequentially.
+
 
 ## 3. Docs
 
@@ -69,4 +84,4 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 # 📖 Usage Example: Step-by-Step
 
-🚧 Work in progress...Coming soon!
+Now that you have installed the package, let's break down at a practical example.

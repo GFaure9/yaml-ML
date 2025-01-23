@@ -1,16 +1,4 @@
-- finish writing html files for config file docs
-- finish writing README with usage example
-- add option to compute multiple pipelines in parallel
-- add docstring (short) + some comments
-- add unit tests and CI/CD process
-- make the whole project a python package accessible on PyPi
-  (first test it with TestPyPi)
-
-____________
-
-- debug AUC computation
-- add XGBoost
-
-____________
-
-- (later) see how it can be possible to integrate yaml-ML with Streamlit
+- readme
+- finish html docs
+- package
+- test it
