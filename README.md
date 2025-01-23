@@ -19,7 +19,7 @@
   <img src="./logo/logo3.png" width="400" />
 </p>
 
-<hr style="border: 0.5px solid grey">
+<hr>
 
 ### *Your whole ML pipeline in one YAML file!*
 
