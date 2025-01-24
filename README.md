@@ -27,9 +27,21 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/GFaure9/yaml-ML/total)
 ![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
-*`yaml_ml` is a Python package that facilitates the creation and running of pipelines to preprocess data 
-and train basic machine learning models in a supervised manner, 
-by providing the whole instructions through a bunch of keywords in a YAML file.*
+[//]: # (*`yaml_ml` is a Python package that facilitates the creation and running of pipelines to preprocess data )
+
+[//]: # (and train basic machine learning models in a supervised manner, )
+
+[//]: # (by providing the whole instructions through a bunch of keywords in a YAML file.*)
+
+*`yaml_ml` makes defining and running machine learning pipelines as
+simple as editing a YAML file. From data preprocessing to training and evaluation,
+the entire workflow is just a configuration away.*
+
+[//]: # (*`yaml_ml` streamlines machine learning workflows by letting you)
+
+[//]: # (define preprocessing, model training, )
+
+[//]: # (and evaluation in one YAML file. Automate your ML pipeline with minimal code.*)
 
 > [!IMPORTANT]
 > Disclaimer: this is the very first version of the package, that is still under development.
