@@ -98,4 +98,14 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 Now that the package is installed, let's have a look to a practical example.
 
-Let's say that we have a dataset of 
+Let's say that we have a dataset of customers information like this one:
+
+And that we want to build a model to predict the `???`.
+
+To do this, for instance, we will:
+1) Preprocess the features values
+2) Choose a model and set its hyperparameters
+
+Let's say that for the **Step 1** we want to do the following preprocessing:
+- on *???*: 
+- on *???*:
