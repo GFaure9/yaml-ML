@@ -33,15 +33,15 @@
 
 [//]: # (by providing the whole instructions through a bunch of keywords in a YAML file.*)
 
-*`yaml_ml` makes defining and running machine learning pipelines as
-simple as editing a YAML file. From data preprocessing to training and evaluation,
-the entire workflow is just a configuration away.*
+[//]: # (*`yaml_ml` makes defining and running machine learning pipelines as)
 
-[//]: # (*`yaml_ml` streamlines machine learning workflows by letting you)
+[//]: # (simple as editing a YAML file. From data preprocessing to training and evaluation,)
 
-[//]: # (define preprocessing, model training, )
+[//]: # (the entire workflow is just a configuration away.*)
 
-[//]: # (and evaluation in one YAML file. Automate your ML pipeline with minimal code.*)
+*`yaml_ml` streamlines machine learning workflows by letting you
+define preprocessing, model training, 
+and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 > [!IMPORTANT]
 > Disclaimer: this is the very first version of the package, that is still under development.
