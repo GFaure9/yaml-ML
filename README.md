@@ -124,12 +124,13 @@ To achieve our goal, we need to define:
 3) The type of model and its hyperparameters
 4) The evaluation metrics to use
 
+#### Step 1
 Let's say that we have already performed some exploratory data analysis that led
 us to want the following preprocessing in **Step 1**:
 - remove `CustomerID`
 - on `Gender`: remove rows with null values, encode it as binary
 - on `Age`: remove rows with null values and perform a robust scaling
-- on `AnnualIncome`: remove rows outliers, replace null values by the median and standardize data
+- on `AnnualIncome`: remove rows with outliers, replace null values by the median and standardize data
 - on `Profession`: remove rows with null values and perform a one-hot encoding
 - on `WorkExperience`: remove rows with null values and perform a maximum absolute scaling
 - on `FamilySize`: remove rows with null values and outliers, and perform a min-max normalization
@@ -170,8 +171,17 @@ preprocessing:
     scaling: 'min_max'
 ```
 
-Note that we must also specify the type of the variable (either `cont` for continuous or `cat`
+Note that we must also specify the type of the variable (either `"cont"` for continuous or `"cat"`
 for categorical).
+
+#### Step 2
+???
+
+#### Step 3
+???
+
+#### Step 4
+???
 
 [//]: # (# todo: continue + at the end say about csv loading + logs + name)
 [//]: # (https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download)
