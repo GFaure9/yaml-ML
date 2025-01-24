@@ -40,7 +40,7 @@
 [//]: # (the entire workflow is just a configuration away.*)
 
 *`yaml_ml` streamlines machine learning workflows by letting you
-define preprocessing, model training, 
+define data preprocessing, model training, 
 and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 > [!IMPORTANT]
