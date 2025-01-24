@@ -27,7 +27,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/GFaure9/yaml-ML/total)
 ![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
-*`yaml_ml` is a Python package that facilitates the creation and running of pipelines to pre-process data 
+*`yaml_ml` is a Python package that facilitates the creation and running of pipelines to preprocess data 
 and train basic machine learning models in a supervised manner, 
 by providing the whole instructions through a bunch of keywords in a YAML file.*
 
@@ -96,16 +96,80 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 # 📖 Usage Example: Step-by-Step
 
-Now that the package is installed, let's have a look to a practical example.
+Now that the package is installed, let's have a look to a practical example!
 
-Let's say that we have a dataset of customers information like this one:
+Let's say that we have a dataset
+[`datasets/customers.csv`](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/datasets/customers.csv)
+containing information about a shop's customers (demographic, socioeconomic, behavioral):
 
-And that we want to build a model to predict the `???`.
+```
+CustomerID,Gender,Age,AnnualIncome,SpendingScore,Profession,WorkExperience,FamilySize
+1,Male,19,15000,39,Healthcare,1,4
+2,Male,21,35000,81,Engineer,3,3
+3,Female,20,86000,6,Engineer,1,1
+4,Female,23,59000,77,Lawyer,0,2
+...
+1998,Male,87,90961,14,Healthcare,9,2
+1999,Male,77,182109,4,Executive,7,2
+2000,Male,90,110610,52,Entertainment,5,2
+```
 
-To do this, for instance, we will:
+And that **we want to build a model to predict how much a new
+customer will spend based on its profile**.
+Here, `SpendingScore` will thus be our *target variable*.
+
+To achieve our goal, we will:
 1) Preprocess the features values
-2) Choose a model and set its hyperparameters
+2) Set the proportions of our train and test datasets
+3) Choose a model and set its hyperparameters
 
-Let's say that for the **Step 1** we want to do the following preprocessing:
-- on *???*: 
-- on *???*:
+Let's say that we have already performed some exploratory data analysis that led
+us to want the following preprocessing in **Step 1**:
+- remove `CustomerID`
+- on `Gender`: remove rows with null values, encode it as binary
+- on `Age`: remove rows with null values and perform a robust scaling
+- on `AnnualIncome`: remove rows outliers, replace null values by the median and standardize data
+- on `Profession`: remove rows with null values and perform a one-hot encoding
+- on `WorkExperience`: remove rows with null values and perform a maximum absolute scaling
+- on `FamilySize`: remove rows with null values and outliers, and perform a min-max normalization
+
+Then, we will have to write the following lines in our configuration file:
+
+```yaml
+preprocessing:
+  
+  CustomerID:
+    type: "cont"
+    cleaning: 'remove_col'
+    
+  Age:
+    type: "cat"
+    cleaning: 'remove_nans'
+    scaling: 'robust'
+  
+  AnnualIncome:
+    type: "cont"
+    cleaning: 'remove_outliers'
+    replace_nans: 'median'
+    scaling: 'standard'
+
+  Profession:
+    type: "cat"
+    cleaning: 'remove_nans'
+    encoding: 'one_hot'
+
+  WorkExperience:
+    type: "cont"
+    cleaning: 'remove_nans'
+    scaling: 'abs_max'
+
+  FamilySize:
+    type: "cont"
+    cleaning: ['remove_nans', 'remove_outliers']
+    scaling: 'min_max'
+```
+
+Note that we must also specify the type of the variable (either `cont` for continuous or `cat`
+for categorical).
+
+[//]: # (# todo: continue)
