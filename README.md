@@ -124,9 +124,9 @@ To achieve our goal, we need to define:
 3) The type of model and its hyperparameters
 4) The evaluation metrics to use
 
-#### Step 1
+### Step 1
 Let's say that we have already performed some exploratory data analysis that led
-us to want the following preprocessing in **Step 1**:
+us to want the following preprocessing:
 - remove `CustomerID`
 - on `Gender`: remove rows with null values, encode it as binary
 - on `Age`: remove rows with null values and perform a robust scaling
@@ -174,13 +174,13 @@ preprocessing:
 Note that we must also specify the type of the variable (either `"cont"` for continuous or `"cat"`
 for categorical).
 
-#### Step 2
+### Step 2
 ???
 
-#### Step 3
+### Step 3
 ???
 
-#### Step 4
+### Step 4
 ???
 
 [//]: # (# todo: continue + at the end say about csv loading + logs + name)
