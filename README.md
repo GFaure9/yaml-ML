@@ -115,13 +115,14 @@ CustomerID,Gender,Age,AnnualIncome,SpendingScore,Profession,WorkExperience,Famil
 ```
 
 And that **we want to build a model to predict how much a new
-customer will spend based on its profile**.
+customer will spend based on its profile, and evaluate the performance of this model**.\
 Here, `SpendingScore` will thus be our *target variable*.
 
-To achieve our goal, we will:
-1) Preprocess the features values
-2) Set the proportions of our train and test datasets
-3) Choose a model and set its hyperparameters
+To achieve our goal, we need to define:
+1) How to preprocess the features values
+2) What should be the proportions of our train and test datasets
+3) The type of model and its hyperparameters
+4) The evaluation metrics to use
 
 Let's say that we have already performed some exploratory data analysis that led
 us to want the following preprocessing in **Step 1**:
@@ -172,4 +173,5 @@ preprocessing:
 Note that we must also specify the type of the variable (either `cont` for continuous or `cat`
 for categorical).
 
-[//]: # (# todo: continue)
+[//]: # (# todo: continue + at the end say about csv loading + logs + name)
+[//]: # (https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download)
