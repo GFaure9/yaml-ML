@@ -138,6 +138,32 @@ To achieve our goal, we need to define:
 
 We will create a blank `customers_pipeline.yaml` config file and fill it step-by-step.
 
+### Preliminary steps
+Before going through preprocessing and model definition steps, we need to specify:
+- a name for our pipeline (that will be used in outputs files names)
+- a path to a folder where to store the outputs (that will be created if not existing already)
+- whether we want logs to be written through the execution of the pipeline
+- instructions to load the data (folder path, file name and format, separator type)
+- the target variable
+
+This is done in our case by writing the following line in our configuration file:
+
+```yaml
+name: "CustomerPipeline"
+
+output_folder: "./out"
+
+logs: yes
+
+loading:
+  folder: "./datasets"
+  name: "customers"
+  format: 'csv'
+  separator: ','
+
+target_variable: 'SpendingScore'
+```
+
 ### Step 1
 Let's say that we have already performed some exploratory data analysis that led
 us to want the following preprocessing:
@@ -188,6 +214,9 @@ preprocessing:
 Note that we must also specify the type of the variable (either `"cont"` for continuous or `"cat"`
 for categorical).
 
+You can refer to the [docs](#3-docs) to see what are the available options
+for dataset preprocessing model.
+
 ### Step 2
 We will then specify in which proportions to split the dataset between training and
 testing subsets. As classically done, we will impose a $80\%-20\%$ split. For this, we will have
@@ -195,6 +224,7 @@ to add the following lines to our configuration file.
 
 ```yaml
 dataset:
+  
   split:
     train: 80
 ```
@@ -208,10 +238,35 @@ of what we wrote).
 > the same in the test and train datasets.
 
 ### Step 3
-At this stage, we want to set the model to fit and its hyperparameters.
+At this stage, we need to indicate what is the type of ML model we want to fit to
+the data and with what hyperparameters. You can refer to the [docs](#3-docs) to
+see what are the available options for the model.
+
+Here, as an illustration, let's assume that we want to fit a ridge regression
+model by minimizing $|y - X w|_2^2 + \alpha |w|_2^2$ with $\alpha = 0.1$ and also
+estimating the intercept as part of the training process.
+
+Then, we will have to write the following lines in our configuration file:
+
+```yaml
+model:
+  
+  regression:
+    
+    lasso:
+      alpha: 0.1
+      fit_intercept: yes
+```
+
+Note that it must be written whether you want to train a model for a regression
+task (key-word `regression`) or a classification task (key-word `classification`).
+In particular, this is important for methods that can be used for both (Decision Trees,
+Random Forests, K-Nearest Neighbours...).
 
 ### Step 4
-???
+Finally, 
+
 
 [//]: # (# todo: continue + at the end say about csv loading + logs + name)
 [//]: # (https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download)
+[//]: # (# todo: say that based on sklearn)
