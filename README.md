@@ -136,6 +136,8 @@ To achieve our goal, we need to define:
 3) The type of model and its hyperparameters
 4) The evaluation metrics to use
 
+We will create a blank `customers_pipeline.yaml` config file and fill it step-by-step.
+
 ### Step 1
 Let's say that we have already performed some exploratory data analysis that led
 us to want the following preprocessing:
@@ -187,10 +189,26 @@ Note that we must also specify the type of the variable (either `"cont"` for con
 for categorical).
 
 ### Step 2
-???
+We will then specify in which proportions to split the dataset between training and
+testing subsets. As classically done, we will impose a $80\%-20\%$ split. For this, we will have
+to add the following lines to our configuration file.
+
+```yaml
+dataset:
+  split:
+    train: 80
+```
+
+One can indifferently set the train size or the test size (for instance `test: 20` instead
+of what we wrote).
+
+> [!NOTE]
+> You can also add the `stratified: yes` argument (at the indentation level of 
+> the `train` argument) to enforce that the distribution of the target variable is
+> the same in the test and train datasets.
 
 ### Step 3
-???
+At this stage, we want to set the model to fit and its hyperparameters.
 
 ### Step 4
 ???
