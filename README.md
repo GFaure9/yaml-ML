@@ -108,7 +108,7 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 # 📖 Usage Example: Step-by-Step
 
-Now that the package is installed, let's have a look to a practical example!
+Now let's have a look to a practical example!
 
 Let's say that we have a dataset
 [`datasets/customers.csv`](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/datasets/customers.csv)
@@ -219,7 +219,7 @@ for dataset preprocessing model.
 
 ### Step 2
 We will then specify in which proportions to split the dataset between training and
-testing subsets. As classically done, we will impose a $$80\% - 20\%$$ split. For this, we will have
+testing subsets. As classically done, we will impose an 80%-20% split. For this, we will have
 to add the following lines to our configuration file.
 
 ```yaml
