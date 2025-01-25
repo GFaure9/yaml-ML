@@ -219,7 +219,7 @@ for dataset preprocessing model.
 
 ### Step 2
 We will then specify in which proportions to split the dataset between training and
-testing subsets. As classically done, we will impose a $80\%-20\%$ split. For this, we will have
+testing subsets. As classically done, we will impose a $$80\% - 20\%$$ split. For this, we will have
 to add the following lines to our configuration file.
 
 ```yaml
@@ -243,7 +243,7 @@ the data and with what hyperparameters. You can refer to the [docs](#3-docs) to
 see what are the available options for the model.
 
 Here, as an illustration, let's assume that we want to fit a ridge regression
-model by minimizing $|y - X w|_2^2 + \alpha |w|_2^2$ with $\alpha = 0.1$ and also
+model by solving $min_w{|y - X w|_2^2 + \alpha |w|_2^2}$ with $\alpha = 0.1$ and also
 estimating the intercept as part of the training process.
 
 Then, we will have to write the following lines in our configuration file:
