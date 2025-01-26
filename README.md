@@ -118,6 +118,6 @@ or preprocessing methods by "plugging" your favorite ones following the package'
 
 ---
 
-## Latest Release
+### Latest Release
 
 - v0.0.1
