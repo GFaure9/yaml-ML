@@ -112,7 +112,7 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 Check out explanations of a complete usage example [here](https://github.com/GFaure9/yaml-ML/tree/main/examples/usage_example).
 
-# 🔗 Dependencies
+## 🔗 Dependencies
 
 `yaml_ml` is mainly based on __Scikit-learn framework__: https://scikit-learn.org/stable/.
 
