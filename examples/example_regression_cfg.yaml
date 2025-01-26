@@ -61,7 +61,7 @@ model:
 #      C: 10
 #      epsilon: 0.1
 
-score: ['r2', 'mae', 'r2', 'mape', 'rmse']
+score: ['r2', 'mae', 'mape', 'rmse']
 
 output_folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/out"
 name: "regression_example"
