@@ -175,5 +175,5 @@ Be aware that scores types are specific to regression and classification tasks.
 
 ---
 
-[^1]: This dataset has been adapted from 
-[this _harisrehmanhh_ __customer data__ Kaggle dataset](https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download).
+[^1]: Dataset adapted from 
+[_harisrehmanhh_ __customer data__ Kaggle dataset](https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download).

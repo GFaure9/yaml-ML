@@ -113,3 +113,23 @@ Check out explanations of a complete usage example [here](https://github.com/GFa
 ---
 
 ### Dependencies
+
+`yaml_ml` is mainly based on __Scikit-learn framework__: https://scikit-learn.org/stable/.
+
+By default, installing `yaml_ml` will also notably install:
+- `lightgbm` (see https://lightgbm.readthedocs.io/en/stable/) for being able to train light gradient boosting models
+- `catboost` (see https://catboost.ai/) for being able to train CatBoost models
+
+If you do not want to use them, you can also install `yaml_ml` from source after 
+commenting `requirements.txt` lines corresponding to these libraries.
+
+```commandline
+git clone https://github.com/GFaure9/yaml-ML.git
+```
+
+Then comment unwanted packages in the requirements file and run in your virtual environment:
+
+```commandline
+cd ./yaml-ML.git
+pip install -r requirements.txt
+```
