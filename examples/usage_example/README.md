@@ -173,7 +173,6 @@ Note that you can also provide only one type of score directly in the string for
 Please refer to the [docs](#3-docs) to see what are the available options for the scores.
 Be aware that scores types are specific to regression and classification tasks.
 
----
 
 [^1]: Dataset adapted from 
 [_harisrehmanhh_ __customer data__ Kaggle dataset](https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download).
