@@ -1,20 +1,3 @@
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="./logo/logo2_colored.png" width="400" />)
-
-[//]: # (</p>)
-
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="./logo/logo_drawing.png" width="400" />)
-
-[//]: # (</p>)
-
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="./logo/logo_sentence.png" width="400" />)
-
-[//]: # (</p>)
 <p align="center">
   <img src="./logo/logo3.png" width="400" />
 </p>
@@ -27,25 +10,13 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/GFaure9/yaml-ML/total)
 ![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
-[//]: # (*`yaml_ml` is a Python package that facilitates the creation and running of pipelines to preprocess data )
-
-[//]: # (and train basic machine learning models in a supervised manner, )
-
-[//]: # (by providing the whole instructions through a bunch of keywords in a YAML file.*)
-
-[//]: # (*`yaml_ml` makes defining and running machine learning pipelines as)
-
-[//]: # (simple as editing a YAML file. From data preprocessing to training and evaluation,)
-
-[//]: # (the entire workflow is just a configuration away.*)
-
 *`yaml_ml` streamlines machine learning workflows by letting you
 define data preprocessing, model training, 
 and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 > [!IMPORTANT]
 > Disclaimer: this is the very first version of the package, that is still under development.
-> Do not use in production, or at your own risk.
+> Use it at your own risk.
 
 # Table of Contents 
 
@@ -125,7 +96,7 @@ By default, installing `yaml_ml` will also notably install:
 - `catboost` (see https://catboost.ai/) to allow for training CatBoost models
 
 If you do not want to use them, you can also install `yaml_ml` from source after 
-commenting `requirements.txt` lines corresponding to these libraries.
+commenting `requirements.txt` lines corresponding to these libraries. To do so, first clone the repo:
 
 ```commandline
 git clone https://github.com/GFaure9/yaml-ML.git
@@ -134,7 +105,7 @@ git clone https://github.com/GFaure9/yaml-ML.git
 Then comment unwanted packages in the requirements file and run in your virtual environment:
 
 ```commandline
-cd ./yaml-ML.git
+cd ./yaml-ML
 pip install -r requirements.txt
 ```
 
@@ -144,5 +115,3 @@ pip install -r requirements.txt
 integration of new models and data preprocessing techniques as needed. 
 So do not hesitate to fork the project and extend the list of available ML models 
 or preprocessing methods by "plugging" your favorite ones following the package's architecture.
-
-
