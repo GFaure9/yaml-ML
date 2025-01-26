@@ -106,7 +106,7 @@ Then comment unwanted packages in the requirements file and run in your virtual 
 
 ```commandline
 cd ./yaml-ML
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ## 🧩 About the `yaml_ml` framework...
