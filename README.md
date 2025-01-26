@@ -146,7 +146,7 @@ Before going through preprocessing and model definition steps, we need to specif
 - instructions to load the data (folder path, file name and format, separator type)
 - the target variable
 
-This is done in our case by writing the following line in our configuration file:
+This is done in our case by writing the following lines in our configuration file:
 
 ```yaml
 name: "CustomerPipeline"
