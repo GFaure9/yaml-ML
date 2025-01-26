@@ -115,3 +115,9 @@ pip install -e .
 integration of new models and data preprocessing techniques as needed. 
 So do not hesitate to fork the project and extend the list of available ML models 
 or preprocessing methods by "plugging" your favorite ones following the package's architecture.
+
+---
+
+## Latest Release
+
+- v0.0.1
