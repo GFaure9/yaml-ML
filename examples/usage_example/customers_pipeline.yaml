@@ -1,25 +1,32 @@
 # Pipeline Logs Information ----------------------------------------
-name: "CustomerPipeline"
-output_folder: "./out"
+name: "CustomersPipeline"
+output_folder: "./CustomersPipeline_outputs"
 logs: yes
 
 # Loading Dataset -------------------------------------------------
 loading:
-  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"
+  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"  # change it to the actual path to the folder in your machine
   name: "customers"
   format: 'csv'
   separator: ','
 
 # Target Variable -------------------------------------------------
-target_variable: 'SpendingScore'
+target_var: 'SpendingScore'
 
 # Data Preprocessing Pipeline -------------------------------------
 preprocessing:
   CustomerID:
     type: "cont"
     cleaning: 'remove_col'
-  Age:
+  SpendingScore:
+    type: "cont"
+    cleaning: 'remove_nans'
+  Gender:
     type: "cat"
+    cleaning: 'remove_nans'
+    encoding: 'binary'
+  Age:
+    type: "cont"
     cleaning: 'remove_nans'
     scaling: 'robust'
   AnnualIncome:

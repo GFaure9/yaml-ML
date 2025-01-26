@@ -169,3 +169,4 @@ cython_debug/
 /examples/examples0_data.csv
 /logo/logos.docx
 /out/
+/CustomersPipeline_outputs/

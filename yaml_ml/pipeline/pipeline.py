@@ -1,4 +1,4 @@
-import os.path
+import os
 
 from yaml_ml.config_loader import load_yaml_config, LoadedYAMLType
 from yaml_ml.logger_cfg import logger, FORMAT
@@ -30,7 +30,7 @@ class Pipeline:
 
         # Configure logger
         if logs:
-            debug_filename = f"debug__{name}.log"
+            debug_filename = f"{out_folder}/debug__{name}.log"
             logger.add(debug_filename, level="DEBUG", colorize=False, format=FORMAT)
             logger.info(f"Enabling writing logs at: './{debug_filename}'\n")
         else:

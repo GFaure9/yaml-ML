@@ -34,16 +34,16 @@ We will create a blank `customers_pipeline.yaml` config file and fill it step-by
 Before going through preprocessing and model definition steps, we need to specify:
 - a name for our pipeline (that will be used in outputs files names)
 - a path to a folder where to store the outputs (that will be created if not existing already)
-- whether we want logs to be written through the execution of the pipeline
+- whether we want logs to be written in a text file through the execution of the pipeline
 - instructions to load the data (folder path, file name and format, separator type)
 - the target variable
 
 This is done in our case by writing the following lines in our configuration file:
 
 ```yaml
-name: "CustomerPipeline"
+name: "CustomersPipeline"
 
-output_folder: "./out"
+output_folder: "./CustomersPipeline_outputs"
 
 logs: yes
 
@@ -53,13 +53,14 @@ loading:
   format: 'csv'
   separator: ','
 
-target_variable: 'SpendingScore'
+target_var: 'SpendingScore'
 ```
 
 ### Step 1
 Let's say that we have already performed some exploratory data analysis that led
 us to want the following preprocessing:
 - remove `CustomerID`
+- on `SpendingScore`: remove rows with null values
 - on `Gender`: remove rows with null values, encode it as binary
 - on `Age`: remove rows with null values and perform a robust scaling
 - on `AnnualIncome`: remove rows with outliers, replace null values by the median and standardize data
@@ -76,8 +77,17 @@ preprocessing:
     type: "cont"
     cleaning: 'remove_col'
     
-  Age:
+  SpendingScore:
+    type: "cont"
+    cleaning: 'remove_nans'
+    
+  Gender:
     type: "cat"
+    cleaning: 'remove_nans'
+    encoding: 'binary'
+    
+  Age:
+    type: "cont"
     cleaning: 'remove_nans'
     scaling: 'robust'
   

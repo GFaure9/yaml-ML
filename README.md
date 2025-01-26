@@ -58,6 +58,8 @@ and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 [Dependencies](#-dependencies)
 
+[About the framework](#-about-the-yaml_ml-framework)
+
 # ⏩ Quickstart
 
 ## 1. Installation
@@ -112,7 +114,7 @@ You can also find examples of `yaml_ml` configuration files in the [Examples Fol
 
 Check out explanations of a complete usage example [here](https://github.com/GFaure9/yaml-ML/tree/main/examples/usage_example).
 
-## 🔗 Dependencies
+### 🔗 Dependencies
 
 `yaml_ml` is mainly based on __Scikit-learn framework__: https://scikit-learn.org/stable/.
 
@@ -133,3 +135,12 @@ Then comment unwanted packages in the requirements file and run in your virtual 
 cd ./yaml-ML.git
 pip install -r requirements.txt
 ```
+
+### 🧩 About the `yaml_ml` framework...
+
+Note that `yaml_ml` was designed with a modular architecture, with the aim of facilitating the
+integration of new models and data preprocessing techniques as needed. 
+So do not hesitate to fork the project and extend the list of available ML models 
+or preprocessing methods by "plugging" your favorite ones following the package's architecture.
+
+
