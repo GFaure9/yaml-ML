@@ -183,6 +183,23 @@ Note that you can also provide only one type of score directly in the string for
 Please refer to the [docs](#3-docs) to see what are the available options for the scores.
 Be aware that scores types are specific to regression and classification tasks.
 
+### Running the pipeline
+To launch the pipeline as defined in the configuration file:
+- open a terminal in the `customers_pipeline.yaml` folder
+- activate the environment where `yaml_ml` is installed
+- run the command
+
+```commandline
+python -m yaml_ml --cfg customers_pipeline.yaml
+```
+
+The trained model in PKL format as well as a recap file of the computed evaluation scores will
+be saved in the output folder.
+
+>[!NOTE]
+> Running the command for multiple configuration files (i.e. giving the folder path were
+> these configurations are stored) will also generate plots showing histograms of
+> the resulting scores for tested pipelines.
 
 [^1]: Dataset adapted from 
 [_harisrehmanhh_ __customer data__ Kaggle dataset](https://www.kaggle.com/datasets/harisrehmanhh/customer-data?resource=download).
