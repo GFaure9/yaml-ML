@@ -10,9 +10,9 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/GFaure9/yaml-ML/total)
 ![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
-*`yaml_ml` streamlines machine learning workflows by letting you
+*`yaml_ml` streamlines __Machine Learning__ workflows by letting you
 define data preprocessing, model training, 
-and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
+and evaluation in one __YAML__ file. Automate your ML pipeline with minimal code.*
 
 > [!IMPORTANT]
 > Disclaimer: this is the very first version of the package. It is still under development.
@@ -95,7 +95,7 @@ By default, installing `yaml_ml` will also install:
 - `lightgbm` (see https://lightgbm.readthedocs.io/en/stable/) to allow for training light gradient boosting models
 - `catboost` (see https://catboost.ai/) to allow for training CatBoost models
 
-If you do not want to use them, you can install `yaml_ml` from source after 
+If you do not want to use them, you can install `yaml_ml` from sources after 
 commenting `requirements.txt` lines corresponding to these libraries. To do so, first clone the repo:
 
 ```commandline
