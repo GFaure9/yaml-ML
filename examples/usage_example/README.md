@@ -1,6 +1,6 @@
 # 📖 Usage Example: Step-by-Step
 
-Now let's have a look to a practical example!
+Let's have a look to a practical example.
 
 Let's say that we have a dataset
 [`datasets/customers.csv`](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/datasets/customers.csv)
@@ -34,7 +34,7 @@ We will create a blank `customers_pipeline.yaml` config file and fill it step-by
 Before going through preprocessing and model definition steps, we need to specify:
 - a name for our pipeline (that will be used in outputs files names)
 - a path to a folder where to store the outputs (that will be created if not existing already)
-- whether we want logs to be written in a text file through the execution of the pipeline
+- whether we want logs to be written to a text file during the execution of the pipeline
 - instructions to load the data (folder path, file name and format, separator type)
 - the target variable
 
@@ -113,7 +113,7 @@ preprocessing:
     scaling: 'min_max'
 ```
 
-Note that we must also specify the type of the variable (either `"cont"` for continuous or `"cat"`
+Note that we must also specify the type of each variable (either `"cont"` for continuous or `"cat"`
 for categorical).
 
 You can refer to the [docs](#3-docs) to see what are the available options
@@ -121,7 +121,7 @@ for dataset preprocessing.
 
 ### Step 2
 We will then specify in which proportions to split the dataset between training and
-testing subsets. As classically done, we will impose an 80%-20% split. For this, we will have
+testing subsets. As classically done, we will impose a 80%-20% split. For this, we will have
 to add the following lines to our configuration file.
 
 ```yaml
@@ -132,23 +132,22 @@ dataset:
 ```
 
 One can indifferently set the train size or the test size (for instance `test: 20` instead
-of what we wrote).
+of `train: 80`).
 
 > [!NOTE]
-> You can also add the `stratified: yes` argument (at the indentation level of 
-> the `train` argument) to enforce that the distribution of the target variable is
-> the same in the test and train datasets.
+> One can also set `stratified: yes` (indented like `train`)
+> to preserve the target variable's distribution across train and test datasets.
 
 ### Step 3
 At this stage, we need to indicate what is the type of ML model we want to fit to
 the data and with what hyperparameters. You can refer to the [docs](#3-docs) to
 see what are the available options for the model.
 
-Here, as an illustration, let's assume that we want to fit a ridge regression
-model by solving $min_w{|y - X w|_2^2 + \alpha |w|_2^2}$ with $\alpha = 0.1$ and also
-estimating the intercept as part of the training process.
+Here, for illustration, we choose a ridge regression model, optimizing 
+$\min_w ||y - Xw||_2^2 + \alpha ||w||_2^2$ with $\alpha = 0.1$ and including 
+the intercept in the training process.
 
-Then, we will have to write the following lines in our configuration file:
+For this, we will have to write the following lines in our configuration file:
 
 ```yaml
 model:
@@ -160,10 +159,10 @@ model:
       fit_intercept: yes
 ```
 
-Note that it must be written whether you want to train a model for a regression
-task (key-word `regression`) or a classification task (key-word `classification`).
-In particular, this is important for methods that can be used for both (Decision Trees,
-Random Forests, K-Nearest Neighbours...).
+Note that you must specify whether you want to train a model for a regression task 
+(keyword: `regression`) or a classification task (keyword: `classification`). 
+This is particularly important for methods that can be used for both, such as 
+Decision Trees, Random Forests, and K-Nearest Neighbors.
 
 ### Step 4
 Finally, we want to indicate which evaluation score(s) to compute on the test dataset with
@@ -177,11 +176,10 @@ we will have to add the following lines in our configuration file:
 score: ['r2', 'rmse', 'mae']
 ```
 
-Note that you can also provide only one type of score directly in the string format
-(instead of a one value list).
+You can also specify a single score as a string instead of using a one-item list.
 
 Please refer to the [docs](#3-docs) to see what are the available options for the scores.
-Be aware that scores types are specific to regression and classification tasks.
+Note that score types are specific to regression and classification tasks.
 
 ### Running the pipeline
 To launch the pipeline as defined in the configuration file:
@@ -193,8 +191,9 @@ To launch the pipeline as defined in the configuration file:
 python -m yaml_ml --cfg customers_pipeline.yaml
 ```
 
-The trained model in PKL format as well as a recap file of the computed evaluation scores will
-be saved in the output folder.
+The trained model in PKL format,
+along with a summary file of the computed evaluation scores,
+will be saved in the output folder.
 
 >[!NOTE]
 > Running the command for multiple configuration files (i.e. giving the folder path were
