@@ -130,17 +130,41 @@
             <strong><codesup>regression</codesup></strong>
             <div class="methods">
                 <ul>
-                    <li><code>'linear'</code><span>A linear regression model that assumes a straight-line relationship between independent variables and the target.</span></li>
-                    <li><code>'ridge'</code><span>A linear model that adds L2 regularization to penalize large coefficients.</span></li>
-                    <li><code>'lasso'</code><span>A linear model that adds L1 regularization, encouraging sparsity in the coefficients.</span></li>
-                    <li><code>'logistic'</code><span>Used for binary outcomes, it models the probability of the target as a logistic function.</span></li>
-                    <li><code>'mlp'</code><span>A multi-layer perceptron neural network, suitable for non-linear regression tasks.</span></li>
-                    <li><code>'svr'</code><span>Support Vector Regression models continuous outputs by finding a function that approximates the data within a specified margin.</span></li>
-                    <li><code>'decision_tree'</code><span>Uses a tree-like model of decisions for predicting continuous values.</span></li>
-                    <li><code>'random_forest'</code><span>A collection of decision trees that work together to improve accuracy by reducing overfitting.</span></li>
-                    <li><code>'gradient_boosting'</code><span>Builds trees sequentially, where each tree tries to correct the errors of the previous one.</span></li>
-                    <li><code>'ada_boost'</code><span>Combines multiple weak learners, focusing more on samples that were misclassified by previous learners.</span></li>
-                    <li><code>'knn'</code><span>K-Nearest Neighbors regression predicts based on the average of the nearest data points.</span></li>
+                    <li><code>'linear'</code><span>Linear regression model. Assumes a straight-line
+                    relationship between independent variables and target.<br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Scikit-learn LinearRegression</a></span></li>
+                    <li><code>'ridge'</code><span>Linear model with L2 regularization. Penalizes large coefficients.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html">Scikit-learn Ridge</a></span></li>
+                    <li><code>'lasso'</code><span>Linear model with L1 regularization. Encourages sparsity in the coefficients.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html">Scikit-learn Lasso</a></span></li>
+                    <li><code>'mlp'</code><span>Multi-layer perceptron regression model. Basic neural network made of dense layers.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html">Scikit-learn MLPRegressor</a></span></li>
+                    <li><code>'svr'</code><span>Support Vector Machine regression model. Fits the regression line to target values within a specified margin.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Scikit-learn SVR</a></span></li>
+                    <li><code>'decision_tree'</code><span>Decision Tree regression model. Piecewise constant approximation of continuous values.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor">Scikit-learn DecisionTreeRegressor</a></span></li>
+                    <li><code>'random_forest'</code><span>Random Forest regression model.
+                    Combines multiple decision trees using bootstrap aggregation (bagging).
+                    Improves accuracy and reduces overfitting.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Scikit-learn RandomForestRegressor</a> </span></li>
+                    <li><code>'gradient_boosting'</code><span>Gradient Boosting regression model. Builds decision trees sequentially,
+                    optimizing each tree to correct the residual errors of its predecessors.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html">Scikit-learn GradientBoostingRegressor</a> </span></li>
+                    <li><code>'ada_boost'</code><span>AdaBoost (adaptive boosting) regression model. Constructs a strong regressor by
+                    sequentially training weak decision tree regressors, weighting samples based on their absolute errors.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostRegressor.html">Scikit-learn AdaBoostRegressor</a> </span></li>
+                    <li><code>'knn'</code><span>K-Nearest Neighbors regression model. Predicts a target value
+                    by averaging the outputs of the K nearest samples.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html">Scikit-learn KNeighborsRegressor</a></span></li>
                 </ul>
             </div>
         </div>
@@ -149,14 +173,38 @@
             <strong><codesup>classification</codesup></strong>
             <div class="methods">
                 <ul>
-                    <li><code>'logistic'</code><span>Models the probability of the target being one class versus the other using a logistic function.</span></li>
-                    <li><code>'decision_tree'</code><span>Classifies data by learning simple decision rules derived from the feature values.</span></li>
-                    <li><code>'svc'</code><span>Support Vector Classification aims to find the best boundary between classes by maximizing the margin.</span></li>
-                    <li><code>'random_forest'</code><span>A collection of decision trees for classification that provides more stability by reducing overfitting.</span></li>
-                    <li><code>'gradient_boosting'</code><span>Builds classifiers sequentially, focusing on correcting the errors of the previous classifiers.</span></li>
-                    <li><code>'ada_boost'</code><span>Combines several weak classifiers to form a strong classifier by focusing on previously misclassified points.</span></li>
-                    <li><code>'knn'</code><span>K-Nearest Neighbors assigns a class based on the majority class among its nearest neighbors.</span></li>
-                    <li><code>'mlp'</code><span>A neural network for classification tasks, capable of learning non-linear decision boundaries.</span></li>
+                    <li><code>'logistic'</code><span>Regularized Logistic Regression classification model.
+                    Predicts binary classes probabilities. Parameters optimization is done via maximum likelihood estimation to minimize log-loss.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">Scikit-learn LogisticRegression</a> </span></li>
+                    <li><code>'mlp'</code><span>Multi-layer perceptron classification model. Basic neural network made of dense layers.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html">Scikit-learn MLPClassifier</a></span></li>
+                    <li><code>'svc'</code><span>Support Vector Machine classification model.
+                    Finds an optimal hyperplane that maximizes the margin between classes in a transformed higher dimensional feature space.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">Scikit-learn SVC</a> </span></li>
+                    <li><code>'decision_tree'</code><span>Decision Tree classification model. Partitions the feature space into regions by recursively splitting the data along feature
+                    thresholds to minimize impurity, assigning each leaf node the most frequent class label.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier">Scikit-learn DecisionTreeClassifier</a></span></li>
+                    <li><code>'random_forest'</code><span>Random Forest classification model.
+                    Combines multiple decision trees using bootstrap aggregation (bagging).
+                    Improves accuracy and reduces overfitting.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">Scikit-learn RandomForestClassifier</a> </span></li>
+                    <li><code>'gradient_boosting'</code><span>Gradient Boosting classification model. Builds decision trees sequentially,
+                    optimizing each tree to correct the residual errors of its predecessors.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html">Scikit-learn GradientBoostingClassifier</a> </span></li>
+                    <li><code>'ada_boost'</code><span>AdaBoost (adaptive boosting) classification model. Constructs a strong classifier by
+                    sequentially training weak decision tree classifiers, weighting samples based on their absolute errors.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html">Scikit-learn AdaBoostClassifier</a> </span></li>
+                    <li><code>'knn'</code><span>K-Nearest Neighbors classification model.
+                    Assigns the most common class among the K nearest samples.
+                    <br>See possible hyperparameters at
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">Scikit-learn KNeighborsClassifier</a> </span></li>
                 </ul>
             </div>
         </div>

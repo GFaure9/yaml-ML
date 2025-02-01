@@ -1,5 +1,5 @@
 from typing import NamedTuple, Union, Type
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, LogisticRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.svm import SVR
 from sklearn.neural_network import MLPRegressor
 from sklearn.neighbors import KNeighborsRegressor
@@ -19,7 +19,6 @@ class RegModel(NamedTuple):
         Type[LinearRegression],
         Type[Ridge],
         Type[Lasso],
-        Type[LogisticRegression],
         Type[MLPRegressor],
         Type[SVR],
         Type[DecisionTreeRegressor],
@@ -35,7 +34,6 @@ REGRESSOR = {
     "linear": RegModel(mdl=LinearRegression, fmt="sklearn"),
     "ridge": RegModel(mdl=Ridge, fmt="sklearn"),
     "lasso": RegModel(mdl=Lasso, fmt="sklearn"),
-    "logistic": RegModel(mdl=LogisticRegression, fmt="sklearn"),
     "mlp": RegModel(mdl=MLPRegressor, fmt="sklearn"),
     "svr": RegModel(mdl=SVR, fmt="sklearn"),
     "decision_tree": RegModel(mdl=DecisionTreeRegressor, fmt="sklearn"),
