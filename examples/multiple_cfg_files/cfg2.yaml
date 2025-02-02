@@ -1,7 +1,7 @@
 logs: no
 
 loading:
-  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"
+  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine
   name: "insurance_charges"
   format: 'csv'
   separator: ','

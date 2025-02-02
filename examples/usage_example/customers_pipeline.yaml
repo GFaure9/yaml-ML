@@ -5,7 +5,7 @@ logs: yes
 
 # Loading Dataset -------------------------------------------------
 loading:
-  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"  # change it to the actual path to the folder in your machine
+  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine  # change it to the actual path to the folder in your machine
   name: "customers"
   format: 'csv'
   separator: ','
