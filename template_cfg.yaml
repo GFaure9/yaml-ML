@@ -1,0 +1,28 @@
+# Pipeline Logs Information ----------------------------------------
+name: "YourPipelineName"
+output_folder: "path/to/your/output/folder"
+logs: no
+
+# Loading Dataset -------------------------------------------------
+loading:
+  folder: "path/to/your/dataset/folder"
+  name: "YourDatasetName"
+  format: 'csv'
+  separator: ','
+
+# Target Variable -------------------------------------------------
+target_var: "YourTargetVariable"
+
+# Data Preprocessing Pipeline -------------------------------------
+preprocessing:
+
+# Train-Test split ------------------------------------------------
+dataset:
+  split:
+
+# Model Definition ------------------------------------------------
+model:
+
+# Evaluation Scores -----------------------------------------------
+score: "YourScoreType"
+

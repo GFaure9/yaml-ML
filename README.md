@@ -79,7 +79,8 @@ Some guidelines about how to define a configuration file are given in the [Confi
 
 All available options are consolidated in the [Modules File](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/modules.yaml).
 
-You can also find examples of `yaml_ml` configuration files in the [Examples Folder](https://github.com/GFaure9/yaml-ML/tree/main/examples).
+You can also find examples of `yaml_ml` configuration files in the [Examples Folder](https://github.com/GFaure9/yaml-ML/tree/main/examples)
+and a template file [template_cfg.yaml](https://github.com/GFaure9/yaml-ML/tree/main/template_cfg.yaml).
 
 # 📖 Usage Example: Step-by-Step
 

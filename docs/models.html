@@ -165,6 +165,16 @@
                     by averaging the outputs of the K nearest samples.
                     <br>See possible hyperparameters at
                     <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html">Scikit-learn KNeighborsRegressor</a></span></li>
+                    <li><code>'catboost'</code><span>CatBoost regression model.
+                    Handles categorical features without previous one-hot or label encoding.
+                    Uses ordered boosting to reduce target leakage. Optimized for speed with GPU acceleration.
+                    <br>See possible hyperparameters at
+                    <a href="https://catboost.ai/docs/en/concepts/python-reference_catboostregressor">CatBoost CatBoostRegressor</a></span></li>
+                    <li><code>'lgbm'</code><span>LightGBM regression model.
+                    Bins continuous features into histograms. Uses a leaf-wise growth strategy.
+                    Optimized for speed with GPU acceleration. Reduced memory usage.
+                    <br>See possible hyperparameters at
+                    <a href="https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMRegressor.html">LightGBM LGBMRegressor</a> </span></li>
                 </ul>
             </div>
         </div>
@@ -205,6 +215,16 @@
                     Assigns the most common class among the K nearest samples.
                     <br>See possible hyperparameters at
                     <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">Scikit-learn KNeighborsClassifier</a> </span></li>
+                    <li><code>'catboost'</code><span>CatBoost classification model.
+                    Handles categorical features without previous one-hot or label encoding.
+                    Uses ordered boosting to reduce target leakage. Optimized for speed with GPU acceleration.
+                    <br>See possible hyperparameters at
+                    <a href="https://catboost.ai/docs/en/concepts/python-reference_catboostclassifier">CatBoost CatBoostClassifier</a></span></li>
+                    <li><code>'lgbm'</code><span>LightGBM classification model.
+                    Bins continuous features into histograms. Uses a leaf-wise growth strategy.
+                    Optimized for speed with GPU acceleration. Reduced memory usage.
+                    <br>See possible hyperparameters at
+                    <a href="https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMClassifier.html">LightGBM LGBMClassifier</a> </span></li>
                 </ul>
             </div>
         </div>

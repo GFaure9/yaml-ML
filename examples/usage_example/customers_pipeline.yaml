@@ -5,7 +5,7 @@ logs: yes
 
 # Loading Dataset -------------------------------------------------
 loading:
-  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine  # change it to the actual path to the folder in your machine
+  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine
   name: "customers"
   format: 'csv'
   separator: ','
