@@ -166,7 +166,6 @@ cython_debug/
 .idea/
 
 # ================== custom ignore ===================
-/examples/examples0_data.csv
-/logo/logos.docx
+/logo/
 /out/
 /CustomersPipeline_outputs/
