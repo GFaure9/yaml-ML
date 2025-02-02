@@ -5,6 +5,8 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostRegressor, RandomForestRegressor, GradientBoostingRegressor
+from catboost import CatBoostRegressor
+from lightgbm import LGBMRegressor
 from sklearn.metrics import (
 mean_squared_error,
 mean_absolute_error,
@@ -26,6 +28,8 @@ class RegModel(NamedTuple):
         Type[GradientBoostingRegressor],
         Type[AdaBoostRegressor],
         Type[KNeighborsRegressor],
+        Type[CatBoostRegressor],
+        Type[LGBMRegressor],
     ]
     fmt: str
 
@@ -41,6 +45,8 @@ REGRESSOR = {
     "gradient_boosting": RegModel(mdl=GradientBoostingRegressor, fmt="sklearn"),
     "ada_boost": RegModel(mdl=AdaBoostRegressor, fmt="sklearn"),
     "knn": RegModel(mdl=KNeighborsRegressor, fmt="sklearn"),
+    "catboost": RegModel(mdl=CatBoostRegressor, fmt="catboost"),
+    "lgbm": RegModel(mdl=LGBMRegressor, fmt="lightgbm"),
 }
 
 

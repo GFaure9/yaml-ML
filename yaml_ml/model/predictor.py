@@ -5,7 +5,7 @@ import numpy as np
 from .regression import REGRESSOR, RegModel, REGRESSION_SCORE
 from .classification import CLASSIFIER, ClasModel, CLASSIFICATION_SCORE
 from .utils import format_table
-from sklearn.preprocessing import LabelEncoder
+# from sklearn.preprocessing import LabelEncoder
 import pickle
 
 
@@ -68,17 +68,21 @@ class Predictor:
     def initialize(self):
         d, c = self.models_dicts, self.cfg
         self.model: RegModel = d[c.prediction_type][c.model_name]
-        if self.model.fmt == "sklearn":
+        if self.model.fmt in ["sklearn", "lightgbm"]:
+            self.predictor = self.model.mdl(**c.h_params)
+        if self.model.fmt == "catboost":
+            if "verbose" not in c.h_params.keys():
+                c.h_params["verbose"] = 0
             self.predictor = self.model.mdl(**c.h_params)
         logger.info(f"Initialized '{c.model_name}' {c.prediction_type} model with hyperparameters: {c.h_params}")
 
     @with_spinner(style="bouncing")  # "moon"
     def train(self, X: np.ndarray, y: np.ndarray):
-        if self.model.fmt == "sklearn":
+        if self.model.fmt in ["sklearn", "catboost", "lightgbm"]:
             self.predictor.fit(X, y)
 
     def infer(self, x: np.ndarray):
-        if self.model.fmt == "sklearn":
+        if self.model.fmt in ["sklearn", "catboost", "lightgbm"]:
             if self.cfg.prediction_type == "classification":
                 return self.predictor.predict(x), self.predictor.predict_proba(x)
             if self.cfg.prediction_type == "regression":
@@ -101,7 +105,7 @@ class Predictor:
             y_pred, y_pred_proba = self.infer(X)
             logger.info(f"Computing {s} score")
             if predict_type == "classification":
-                if self.model.fmt == "sklearn":
+                if self.model.fmt in ["sklearn", "catboost", "lightgbm"]:
                     # label_enc = LabelEncoder()
                     # score_vals[s] = score_fun(label_enc.fit_transform(y), y_pred, average="weighted")
                     # score_vals[s] = score_fun(y, y_pred, average="weighted")

@@ -1,7 +1,7 @@
 logs: no
 
 loading:
-  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine
+  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"
   name: "iris"
   format: 'csv'
   separator: ','
@@ -45,6 +45,14 @@ dataset:
 
 model:
   classification:
+#    catboost:
+#      iterations: 500
+#      depth: 6
+#      learning_rate: 0.1
+#    lgbm:
+#      max_depth: 4
+#      learning_rate: 0.1
+#      n_estimators: 100
     random_forest:
       n_estimators: 100
       criterion: 'gini'

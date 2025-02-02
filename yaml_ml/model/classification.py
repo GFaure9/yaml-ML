@@ -5,6 +5,8 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier,
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
+from catboost import CatBoostClassifier
+from lightgbm import LGBMClassifier
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, log_loss, roc_auc_score
 
 
@@ -18,6 +20,8 @@ class ClasModel(NamedTuple):
         Type[SVC],
         Type[KNeighborsClassifier],
         Type[MLPClassifier],
+        Type[CatBoostClassifier],
+        Type[LGBMClassifier],
     ]
     fmt: str
 
@@ -31,6 +35,8 @@ CLASSIFIER = {
     "ada_boost": ClasModel(mdl=AdaBoostClassifier, fmt="sklearn"),
     "knn": ClasModel(mdl=KNeighborsClassifier, fmt="sklearn"),
     "mlp": ClasModel(mdl=MLPClassifier, fmt="sklearn"),
+    "catboost": ClasModel(mdl=CatBoostClassifier, fmt="catboost"),
+    "lgbm": ClasModel(mdl=LGBMClassifier, fmt="lightgbm"),
 }
 
 

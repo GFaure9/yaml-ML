@@ -1,6 +1,8 @@
-numpy==2.1.3
+numpy>=1.16.0,<2.0.0
 scikit-learn==1.5.2
 PyYAML==6.0.2
 loguru==0.7.2
 tqdm==4.67.1
 matplotlib==3.10.0
+lightgbm==4.5.0
+catboost==1.2.7

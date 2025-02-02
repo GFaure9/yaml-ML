@@ -1,10 +1,11 @@
 logs: no
 
 loading:
-  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine
+  folder: "C:/Users/guilh/Documents/Projets_Code/yaml-ML/datasets"
   name: "insurance_charges"
   format: 'csv'
   separator: ','
+#  folder: "path/to/dataset/folder"  # change it to the actual path to the folder in your machine
 
 target_var: 'charges'
 
@@ -47,9 +48,17 @@ dataset:
 
 model:
   regression:
-    lasso:
-      alpha: 0.1
-      fit_intercept: yes
+    catboost:
+      iterations: 500
+      depth: 6
+      learning_rate: 0.1
+#      lgbm:
+#        max_depth: 4
+#        learning_rate: 0.1
+#        n_estimators: 100
+#    lasso:
+#      alpha: 0.1
+#      fit_intercept: yes
 #    mlp:
 #      hidden_layer_sizes: [50, 50]
 #      activation: 'relu'

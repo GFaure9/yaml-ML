@@ -52,6 +52,8 @@ models:
     - gradient_boosting
     - ada_boost
     - knn
+    - catboost
+    - lgbm
   classification:
     - logistic
     - decision_tree
@@ -61,6 +63,8 @@ models:
     - ada_boost
     - knn
     - mlp
+    - catboost
+    - lgbm
 
 scores:
   regression:
