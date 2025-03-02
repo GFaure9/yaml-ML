@@ -37,6 +37,9 @@ class PreProcessorConfig:
                         task_name = {task_name}
                     if isinstance(task_name, list):
                         task_name = set(task_name)
+                    if isinstance(task_name, dict):
+                        assert len(task_name) == 1  # debug
+                        task_name = {next(iter(task_name))}
                     if not task_name.issubset(self.valid_preprocess[tp][task_type]):
                         err_msg = f"Error in preprocessing config for '{var}' with task type {task_type}."
                         err_msg += f"{task_name} is not a valid task. Valid tasks are: {self.valid_preprocess[tp][task_type]}"
@@ -76,14 +79,15 @@ class PreProcessor:
         vars_to_remove = []
         for var, tp in variables_types.items():
             var_tasks = tasks[var]
-            mtd = var_tasks["cleaning"]
-            if mtd == "remove_col":
-                cols_np = np.array(new_dataset.arrays_names)
-                ids_to_remove = np.argwhere(cols_np == var).flatten()
-                new_dataset.arrays_names = np.delete(cols_np, ids_to_remove).tolist()
-                new_dataset.arrays = np.delete(new_dataset.as_array, ids_to_remove, axis=1).transpose().tolist()
-                vars_to_remove.append(var)
-                logger.info(f"Removed column '{var}' in the dataset")
+            if "cleaning" in var_tasks.keys():
+                mtd = var_tasks["cleaning"]
+                if mtd == "remove_col":
+                    cols_np = np.array(new_dataset.arrays_names)
+                    ids_to_remove = np.argwhere(cols_np == var).flatten()
+                    new_dataset.arrays_names = np.delete(cols_np, ids_to_remove).tolist()
+                    new_dataset.arrays = np.delete(new_dataset.as_array, ids_to_remove, axis=1).transpose().tolist()
+                    vars_to_remove.append(var)
+                    logger.info(f"Removed column '{var}' in the dataset")
         for var in vars_to_remove:
             del variables_types[var]
             del tasks[var]
@@ -102,7 +106,6 @@ class PreProcessor:
                     mtd = [mtd] if isinstance(mtd, str) else mtd
 
                     logger.info(f"Cleaning '{var}' data with: {mtd}")
-
                     i = new_dataset.arrays_names.index(var)
                     x = new_dataset.arrays[i]
 

@@ -169,3 +169,5 @@ cython_debug/
 /logo/
 /out/
 /CustomersPipeline_outputs/
+/tests/res/
+/tests/out_parallel/

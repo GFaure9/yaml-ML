@@ -1,0 +1,58 @@
+name: "reg_gradient_boosting"
+output_folder: "./out_parallel"
+logs: no
+
+loading:
+  folder: "./tests_datasets"
+  name: "test_dataset_regression_comma"
+  format: 'csv'
+  separator: ','
+
+target_var: "y"
+preprocessing:
+  y:
+    type: "cont"
+    cleaning: [ 'remove_nans', 'remove_outliers' ]
+    scaling: 'min_max'
+  x1:
+    type: "cat"
+    cleaning: [ 'remove_nans' ]
+    encoding: 'binary'
+  x2:
+    type: "cat"
+    replace_nans: 'most_frequent'
+    encoding: 'ordinal'
+  x3:
+    type: "cont"
+    cleaning: [ 'remove_outliers' ]
+    replace_nans: {"value": 0.5}
+    scaling: 'abs_max'
+
+dataset:
+  split:
+    stratified: no
+    train: 80
+
+model:
+  regression:
+    gradient_boosting:
+      loss: "squared_error"
+      learning_rate: 0.1
+      n_estimators: 100
+      subsample: 1.0
+      criterion: "friedman_mse"
+      min_samples_split: 2
+      min_samples_leaf: 1
+      min_weight_fraction_leaf: 0.0
+      max_depth: 3
+      min_impurity_decrease: 0.0
+      random_state: 42
+      max_features: 100
+      verbose: 0
+      max_leaf_nodes: 1000
+      warm_start: False
+      validation_fraction: 0.1
+      tol: 0.0001
+      ccp_alpha: 0.0
+
+score: ['r2', 'mae', 'mape', 'rmse']

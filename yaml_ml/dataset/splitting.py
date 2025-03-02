@@ -81,13 +81,13 @@ class Splitter:
 
         logger.info(info_msg)
         X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=ts, stratify=stratification, random_state=42,
+            X, y, test_size=ts/100, stratify=stratification, random_state=42,
         )
 
         if val:
             logger.info(f"Allocating {val}% of training data to future validation")
             X_train, X_val, y_train, y_val = train_test_split(
-                X_train, y_train, test_size=val, random_state=42,
+                X_train, y_train, test_size=val/100, random_state=42,
             )
 
         res = DataSplit(

@@ -12,9 +12,9 @@ def run_pipeline(config_filepath: str):
 
 
 class MultiPipelines:
-    def __init__(self, cfg_folder_path, cpu: int = None):
+    def __init__(self, cfg_folder_path, n_processes: int = None):
         self.cfg_folder_path = cfg_folder_path
-        self.cpu = cpu
+        self.n_processes = n_processes
 
     def run(self):
         # Get all YAML configuration files inside the given folder at `self.cfg_folder_path`
@@ -30,16 +30,16 @@ class MultiPipelines:
         # Use multiprocessing Pool for parallel computing on number of given `self.cpu` if not None
         scores = []
 
-        if self.cpu:
+        if self.n_processes:
             logger.info(
-                f"Running config files pipelines in parallel with batch size {self.cpu} using same number of CPU cores...\n"
+                f"Running config files pipelines in parallel with batch size {self.n_processes} using same number of worker processes...\n"
             )
 
-            k = n_configs // self.cpu
+            k = n_configs // self.n_processes
 
             for i in tqdm(range(k + 1)):
-                batch = configs_filepaths[self.cpu * i: self.cpu * (i + 1)]
-                with Pool(self.cpu) as p:
+                batch = configs_filepaths[self.n_processes * i: self.n_processes * (i + 1)]
+                with Pool(self.n_processes) as p:
                     batch_scores = p.map(run_pipeline, batch)
                     scores.extend(batch_scores)
 

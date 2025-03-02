@@ -8,7 +8,7 @@ To run the module:
 
 or
 
->>> python -m MODULE_NAME --cfg path/to/your/config/files/folder --cpu NUM_CPU
+>>> python -m MODULE_NAME --cfg path/to/your/config/files/folder --n_processes NUM_PROCESSES
 
 N.B: For now `MODULE_NAME` will be `yaml_ml`.
 """
@@ -21,13 +21,13 @@ import os
 
 def main(
         config_path: str,
-        cpu: int = None,
+        n_processes: int = None,
 ):
     if os.path.isfile(config_path):
         Pipeline(cfg_pth=config_path).run()
 
     elif os.path.isdir(config_path):
-        MultiPipelines(cfg_folder_path=config_path, cpu=cpu).run()
+        MultiPipelines(cfg_folder_path=config_path, n_processes=n_processes).run()
 
 
 if __name__ == "__main__":
@@ -35,9 +35,9 @@ if __name__ == "__main__":
         description="Run your ML pipeline(s) with the parameters specified in given YAML file(s)"
     )
     cfg_help_text = "Enter the full path to your pipeline configuration YAML file OR to a folder containing multiple configuration files"
-    cpu_help_text = "[OPTIONAL] If you provided a path to a folder of configuration files, indicate the number of CPU cores to use for parallel computing. Default is `None`"
+    n_processes_help_text = "[OPTIONAL] If you provided a path to a folder of configuration files, indicate the number of processes to use for parallel computing (for optimal usage < CPU cores). Default is `None`"
     parser.add_argument("--cfg", required=True, type=str, help=cfg_help_text)
-    parser.add_argument("--cpu", required=False, type=int, help=cpu_help_text)
+    parser.add_argument("--n_processes", required=False, type=int, help=n_processes_help_text)
     args = parser.parse_args()
 
-    main(args.cfg, args.cpu)
+    main(args.cfg, args.n_processes)

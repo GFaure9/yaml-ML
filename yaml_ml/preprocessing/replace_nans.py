@@ -1,19 +1,19 @@
 import numpy as np
 from sklearn.impute import SimpleImputer
-from typing import Tuple, Union, Any
+from typing import Dict, Union, Any
 from yaml_ml.logger_cfg import logger
 from yaml_ml.special_types import ArrayLike
 
 
-def replace_nans(x, mtd: Union[str, Tuple[str, Any]], var_type: str) -> ArrayLike:
-    mtd = (mtd,) if not isinstance(mtd, tuple) else mtd
-    kwargs = {"strategy": STRATEGIES[var_type][mtd[0]]}
-    if mtd[0] == "value":
-        if not isinstance(mtd, tuple):
-            err_msg = "You must provide a tuple of the form ('value', YOUR_VALUE) for `mtd`"
+def replace_nans(x, mtd: Union[str, Dict[str, Any]], var_type: str) -> ArrayLike:
+    mtd_name = mtd if not isinstance(mtd, dict) else next(iter(mtd))
+    kwargs = {"strategy": STRATEGIES[var_type][mtd_name]}
+    if isinstance(mtd, dict):
+        if mtd_name != "value":
+            err_msg = "You must provide a dict of the form {'value': YOUR_VALUE} for `mtd`"
             logger.error(err_msg)
             raise ValueError(err_msg)
-        kwargs["fill_value"] = mtd[1]
+        kwargs["fill_value"] = mtd[mtd_name]
     imp = SimpleImputer(missing_values=np.nan, **kwargs)
     return imp.fit_transform(x)
 

@@ -1,0 +1,16 @@
+name: "loading_txt_comma"
+output_folder: "."
+logs: no
+
+loading:
+  folder: "./tests_datasets"
+  name: "test_dataset_regression_comma"
+  format: 'txt'
+  separator: ','
+
+target_var: "y"
+preprocessing:
+dataset:
+  split:
+model:
+score:

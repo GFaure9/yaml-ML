@@ -67,12 +67,16 @@ class Predictor:
 
     def initialize(self):
         d, c = self.models_dicts, self.cfg
-        self.model: RegModel = d[c.prediction_type][c.model_name]
+        self.model: Union[RegModel, ClasModel] = d[c.prediction_type][c.model_name]
         if self.model.fmt in ["sklearn", "lightgbm"]:
+            if c.model_name == "svc":
+                c.h_params["probability"] = True
             self.predictor = self.model.mdl(**c.h_params)
         if self.model.fmt == "catboost":
-            if "verbose" not in c.h_params.keys():
-                c.h_params["verbose"] = 0
+            if "logging_level" not in c.h_params.keys():
+                c.h_params["logging_level"] = "Silent"
+            if "allow_writing_files" not in c.h_params.keys():
+                c.h_params["allow_writing_files"] = False
             self.predictor = self.model.mdl(**c.h_params)
         logger.info(f"Initialized '{c.model_name}' {c.prediction_type} model with hyperparameters: {c.h_params}")
 

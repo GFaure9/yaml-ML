@@ -1,0 +1,35 @@
+name: "prepro2"
+output_folder: "."
+logs: no
+
+loading:
+  folder: "./tests_datasets"
+  name: "test_dataset_regression_comma"
+  format: 'csv'
+  separator: ','
+
+target_var: "y"
+preprocessing:
+  y:
+    type: "cont"
+    cleaning: 'remove_outliers'
+    replace_nans: 'mean'
+    scaling: 'standard'
+  x1:
+    type: "cat"
+    cleaning: [ 'remove_nans' ]
+    encoding: 'binary'
+  x2:
+    type: "cat"
+    cleaning: [ 'remove_nans' ]
+    encoding: 'ordinal'
+  x3:
+    type: "cont"
+    cleaning: [ 'remove_outliers' ]
+    replace_nans: 'median'
+    scaling: 'robust'
+
+dataset:
+  split:
+model:
+score:

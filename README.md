@@ -31,6 +31,8 @@ and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 [About the framework](#-about-the-yaml_ml-framework)
 
+[Tests](#-tests)
+
 # ⏩ Quickstart
 
 ## 1. Installation
@@ -64,14 +66,14 @@ python -m yaml_ml --cfg path/to/your/config/yaml/file
 
 In case you want to test different configurations, create corresponding YAML files
 and put them in a unique folder. 
-To launch all the corresponding pipelines using multiprocessing over `N` CPU cores, run the command:
+To launch all the corresponding pipelines in parallel using multiprocessing with `N` worker processes, run the command:
 
 ```commandline
-python -m yaml_ml --cfg path/to/your/configs/folder --cpu N 
+python -m yaml_ml --cfg path/to/your/configs/folder --n_processes N 
 ```
 
 >[!NOTE]
-> Without providing the `--cpu` argument, pipelines will be launched sequentially.
+> Without providing the `--n_processes` argument, pipelines will be launched sequentially.
 
 ## 3. Docs
 
@@ -116,6 +118,26 @@ pip install -e .
 integration of new models and data preprocessing techniques as needed. 
 So do not hesitate to fork the project and extend the list of available ML models 
 or preprocessing methods by "plugging" your favorite ones following the package's architecture.
+
+---
+
+## ✅ Tests
+
+If you cloned the repo and installed the package from source (`pip install -e .`), 
+you can make sure everything works fine before using it by running:
+
+```commandline
+cd ./tests
+python test_yaml_ml.py
+```
+
+At the end, you should get something like:
+
+```
+Ran 4 tests in 120.840s
+
+OK
+```
 
 ---
 
