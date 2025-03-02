@@ -45,11 +45,14 @@ conda activate yaml_ml_env
 pip install --upgrade pip
 ```
 
-Then install the package:
+Then install the package (temporarily on **TestPyPI**):
 
 ```commandline
-pip install yaml_ml
+pip install -i https://test.pypi.org/simple/ yaml-ml
 ```
+
+>[!NOTE]
+> Release on **PyPI** is coming soon!
 
 ## 2. Usage
 
@@ -141,4 +144,4 @@ or preprocessing methods by "plugging" your favorite ones following the package'
 
 ### Latest Release
 
-- v0.0.1
+- [**TestPyPI**] v0.0.141
