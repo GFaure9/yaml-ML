@@ -29,9 +29,9 @@ and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 
 [Dependencies](#-dependencies)
 
-[About the framework](#-about-the-yaml_ml-framework)
-
 [Tests](#-tests)
+
+[About the framework](#-about-the-yaml_ml-framework)
 
 # ⏩ Quickstart
 
