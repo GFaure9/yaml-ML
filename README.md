@@ -114,7 +114,7 @@ pip install -e .
 
 ## ✅ Tests
 
-If you cloned the repo and installed the package from source (`pip install -e .`), 
+If you cloned the repo and installed the package from sources (`pip install -e .`), 
 you can make sure everything works fine before using it by running:
 
 ```commandline
