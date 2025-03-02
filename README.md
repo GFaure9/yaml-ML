@@ -112,15 +112,6 @@ cd ./yaml-ML
 pip install -e .
 ```
 
-## 🧩 About the `yaml_ml` framework...
-
-`yaml_ml` was designed with a modular architecture, with the aim of facilitating the
-integration of new models and data preprocessing techniques as needed. 
-So do not hesitate to fork the project and extend the list of available ML models 
-or preprocessing methods by "plugging" your favorite ones following the package's architecture.
-
----
-
 ## ✅ Tests
 
 If you cloned the repo and installed the package from source (`pip install -e .`), 
@@ -138,6 +129,13 @@ Ran 4 tests in 120.840s
 
 OK
 ```
+
+## 🧩 About the `yaml_ml` framework...
+
+`yaml_ml` was designed with a modular architecture, with the aim of facilitating the
+integration of new models and data preprocessing techniques as needed. 
+So do not hesitate to fork the project and extend the list of available ML models 
+or preprocessing methods by "plugging" your favorite ones following the package's architecture.
 
 ---
 
