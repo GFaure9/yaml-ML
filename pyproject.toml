@@ -16,7 +16,7 @@ packages = [
 
 [project]
 name = "yaml_ml"
-version = "0.0.141"
+version = "1.0.0"
 authors = [
   {name="GFaure9"},
 ]

@@ -20,7 +20,7 @@ pip install --upgrade pip
 Then install the package:
 
 ```commandline
-pip install yaml_ml
+pip install yaml-ml
 ```
 
 ## 2. Usage
