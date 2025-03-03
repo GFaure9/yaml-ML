@@ -27,7 +27,7 @@ class MultiPipelines:
 
         logger.info(f"Found {n_configs} YAML configuration files at: {self.cfg_folder_path}\n")
 
-        # Use multiprocessing Pool for parallel computing on number of given `self.cpu` if not None
+        # Use multiprocessing Pool for parallel computing on number of given `self.n_processes` if not None
         scores = []
 
         if self.n_processes:

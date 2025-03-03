@@ -1,6 +1,6 @@
 # 📖 Usage Example: Step-by-Step
 
-Let's have a look to a practical example.
+Let's have a look at a practical example.
 
 Let's say that we have a dataset
 [`datasets/customers.csv`](https://github.com/GFaure9/yaml-ML/tree/main/yaml_ml/datasets/customers.csv)
