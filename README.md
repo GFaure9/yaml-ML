@@ -40,7 +40,7 @@ and evaluation in one YAML file. Automate your ML pipeline with minimal code.*
 Create a virtual environment (e.g. with `conda`), activate it and upgrade `pip`:
 
 ```commandline
-conda create --name yaml_ml_env
+conda create --name yaml_ml_env python=3.11
 conda activate yaml_ml_env
 pip install --upgrade pip
 ```
