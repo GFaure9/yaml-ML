@@ -7,7 +7,7 @@
 ### *Your whole ML pipeline in one YAML file!*
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/GFaure9/yaml-ML?style=social)
-![PyPI Total Downloads](https://img.shields.io/pypi/dt/yaml-ml)
+![PyPI Downloads](https://img.shields.io/pypi/dm/yaml-ml)
 ![Development Stage](https://img.shields.io/badge/stage-Beta-yellow)
 
 *`yaml_ml` streamlines machine learning workflows by letting you
